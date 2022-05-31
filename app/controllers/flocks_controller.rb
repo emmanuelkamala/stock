@@ -4,20 +4,23 @@ class FlocksController < ApplicationController
   # GET /flocks or /flocks.json
   def index
     @flocks = Flock.all
-    @title = 'Flocks'
+    @title = 'All Flocks'
   end
 
   # GET /flocks/1 or /flocks/1.json
   def show
+    @title = "Flock #{@flock.id}"
   end
 
   # GET /flocks/new
   def new
     @flock = Flock.new
+    @title = "New Flock"
   end
 
   # GET /flocks/1/edit
   def edit
+    @title = "Edit Flock #{@flock.id}"
   end
 
   # POST /flocks or /flocks.json

@@ -5,4 +5,10 @@
   width: calc (100% - 240px);
   left: 240px;
   padding: 0 20px;
+  transition: all 0.5s ease;
+}
+
+.sidebar.active ~ .content__details {
+  width: calc(100% - 60px);
+  left: 60px;
 }

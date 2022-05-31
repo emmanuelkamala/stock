@@ -9,15 +9,18 @@ class IncomesController < ApplicationController
 
   # GET /incomes/1 or /incomes/1.json
   def show
+    @title = "Income #{@income.id}"
   end
 
   # GET /incomes/new
   def new
     @income = Income.new
+    @title = "New Income"
   end
 
   # GET /incomes/1/edit
   def edit
+    @title = "Edit Income #{@income.id}"
   end
 
   # POST /incomes or /incomes.json
