@@ -1,5 +1,7 @@
 <%= render 'layouts/sidebar' %>
 
+<div class="content__details">
+
 <h1>Add flock</h1>
 
 <%= render "form", flock: @flock %>
@@ -8,4 +10,5 @@
 
 <div>
   <%= link_to "Back to flocks", flocks_path %>
+</div>
 </div>

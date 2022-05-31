@@ -1,4 +1,5 @@
 <%= render 'layouts/sidebar' %>
+<div class="content__details">
 
 <p style="color: green"><%= notice %></p>
 
@@ -9,4 +10,5 @@
   <%= link_to "Back to expenses", expenses_path %>
 
   <%= button_to "Destroy this expense", @expense, method: :delete %>
+</div>
 </div>

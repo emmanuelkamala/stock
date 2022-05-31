@@ -4,20 +4,23 @@ class ExpensesController < ApplicationController
   # GET /expenses or /expenses.json
   def index
     @expenses = Expense.all
-    @title = 'Expenses'
+    @title = 'All Expenses'
   end
 
   # GET /expenses/1 or /expenses/1.json
   def show
+    @title = "Expense #{@expense.id}"
   end
 
   # GET /expenses/new
   def new
     @expense = Expense.new
+    @title = 'New Expense'
   end
 
   # GET /expenses/1/edit
   def edit
+    @title = "Edit Expense #{@expense.id}"
   end
 
   # POST /expenses or /expenses.json
