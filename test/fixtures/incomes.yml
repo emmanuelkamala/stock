@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2022-05-31 08:10:21
+  category: MyString
+  quantity: 1
+  unit_price: 1
+  total_amount: 1
+  description: MyText
+  type: one
+
+two:
+  date: 2022-05-31 08:10:21
+  category: MyString
+  quantity: 1
+  unit_price: 1
+  total_amount: 1
+  description: MyText
+  type: two

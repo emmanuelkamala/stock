@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_31_050603) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_31_051021) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,6 +27,37 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_050603) do
     t.index ["type_id"], name: "index_expenses_on_type_id"
   end
 
+  create_table "flocks", force: :cascade do |t|
+    t.integer "batch_no"
+    t.datetime "date_in"
+    t.datetime "retirement_date"
+    t.string "source"
+    t.string "flock_stored"
+    t.integer "initial_stock"
+    t.integer "current_stock"
+    t.integer "age"
+    t.text "notes"
+    t.bigint "status_id"
+    t.bigint "type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["status_id"], name: "index_flocks_on_status_id"
+    t.index ["type_id"], name: "index_flocks_on_type_id"
+  end
+
+  create_table "incomes", force: :cascade do |t|
+    t.datetime "date"
+    t.string "category"
+    t.integer "quantity"
+    t.integer "unit_price"
+    t.integer "total_amount"
+    t.text "description"
+    t.bigint "type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["type_id"], name: "index_incomes_on_type_id"
+  end
+
   create_table "statuses", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -40,4 +71,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_050603) do
   end
 
   add_foreign_key "expenses", "types"
+  add_foreign_key "flocks", "statuses"
+  add_foreign_key "flocks", "types"
+  add_foreign_key "incomes", "types"
 end
