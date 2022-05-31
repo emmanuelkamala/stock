@@ -32,18 +32,13 @@
   </div>
 
   <div>
-    <%= form.label :total_amount, style: "display: block" %>
-    <%= form.number_field :total_amount %>
-  </div>
-
-  <div>
     <%= form.label :description, style: "display: block" %>
     <%= form.text_area :description %>
   </div>
 
   <div>
     <%= form.label :type_id, style: "display: block" %>
-    <%= form.text_field :type_id %>
+    <%= form.collection_select :type_id, Type.all, :id, :name, {prompt: true}, class: 'form-control' %>
   </div>
 
   <div>
