@@ -6,18 +6,21 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="details field">
-    <%= f.label :email, class: "devise__email-label" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "devise__email-field" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", 
+        class: "devise__email-field", placeholder: "Email address" 
+    %>
   </div>
 
   <div class="details field">
-    <%= f.label :password, class: "devise__password-label" %>
-    <%= f.password_field :password, autocomplete: "new-password", class: "devise__password-field" %>
+    <%= f.password_field :password, autocomplete: "new-password", 
+        class: "devise__password-field", placeholder: "Password"
+    %>
   </div>
 
   <div class="details field">
-    <%= f.label :password_confirmation, class: "devise__password-label" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "devise__password-field" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", 
+        class: "devise__password-field", placeholder: "Confirm password"
+    %>
   </div>
 
   <div class="actions">
