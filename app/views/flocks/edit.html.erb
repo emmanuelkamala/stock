@@ -1,14 +1,10 @@
 <%= render 'layouts/sidebar' %>
 <div class="content__details">
-
-<h1>Editing flock</h1>
-
-<%= render "form", flock: @flock %>
-
-<br>
-
-<div>
-  <%= link_to "Show this flock", @flock %> |
-  <%= link_to "Back to flocks", flocks_path %>
-</div>
+  <h1>Editing flock</h1>
+  <%= render "form", flock: @flock %>
+  <br>
+  <div>
+    <%= link_to "Show this flock", @flock %> |
+    <%= link_to "Back to flocks", flocks_path %>
+  </div>
 </div>

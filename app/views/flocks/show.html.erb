@@ -1,12 +1,12 @@
 <%= render 'layouts/sidebar' %>
 
-<p style="color: green"><%= notice %></p>
+<div class="content__details">
+  <p style="color: green"><%= notice %></p>
+  <%= render @flock %>
+  <div>
+    <%= link_to "Edit this flock", edit_flock_path(@flock) %> |
+    <%= link_to "Back to flocks", flocks_path %>
 
-<%= render @flock %>
-
-<div>
-  <%= link_to "Edit this flock", edit_flock_path(@flock) %> |
-  <%= link_to "Back to flocks", flocks_path %>
-
-  <%= button_to "Destroy this flock", @flock, method: :delete %>
+    <%= button_to "Destroy this flock", @flock, method: :delete %>
+  </div>
 </div>

@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <div class="sidebar">
   <div class="sidebar__logo">
     <i class="fa-regular fa-thumbs-up"></i>
@@ -7,52 +8,52 @@
   </div>
   <ul class="sidebar__nav-links">
     <li>
-      <a href="/dashboard">
+      <%= link_to(dashboard_path) do %>
         <i class="fa-solid fa-grip"></i>
         Dashboard
-      </a>
+      <% end %>
     </li>
     <li>
-      <a href="/flocks">
+      <%= link_to(flocks_path) do %>
         <i class="fa-solid fa-layer-group"></i>
         Flock
-      </a>
+      <% end %>
     </li>
     <li>
-      <a href="/incomes">
+      <%= link_to(incomes_path) do %>
         <i class="fa-solid fa-wallet"></i>
         Income
-      </a>
+      <% end %>
     </li>
     <li>
-      <a href="/expenses">
+      <%= link_to(expenses_path) do %>
         <i class="fa-solid fa-cart-shopping"></i>
         Expense
-      </a>
+      <% end %>
     </li>
      <li>
-      <a href="/types">
+      <%= link_to(types_path) do %>
         <i class="fa-solid fa-toolbox"></i>
         Type
-      </a>
+      <% end %>
     </li>
     <li>
-      <a href="/statuses">
+      <%= link_to(statuses_path) do %>
         <i class="fa-solid fa-signal"></i>
         Status 
-        </a>
+      <% end %>
     </li>
     <li>
-      <a href="/report">
+      <%= link_to(dashboard_path) do %>
         <i class="fa-solid fa-arrow-trend-up"></i>
         Report
-      </a>
+      <% end %>
     </li>
     <li>
-      <a href="#">
+      <%= button_to(destroy_user_session_path, method: :delete, class: 'logout') do %>
         <i class="fa-solid fa-arrow-right-from-bracket"></i>
         Logout
-      </a>
+      <% end %>
     </li>
   </ul>
 </div>
@@ -67,7 +68,7 @@
       </span>
     </div>
     <div class="home__section-profile">
-      <%= link_to "Profile", '#', class: "home__section-profile__username" %>
+      <%= link_to current_user.email, edit_user_registration_path, class: "home__section-profile__username" %>
     </div>
   </nav>
 </div>
@@ -80,3 +81,5 @@
     sidebar.classList.toggle("active");
   }
 </script>
+
+<% end %>

@@ -1,14 +1,10 @@
 <%= render 'layouts/sidebar' %>
 <div class="content__details">
-
-<p style="color: green"><%= notice %></p>
-
-<%= render @expense %>
-
-<div>
-  <%= link_to "Edit this expense", edit_expense_path(@expense) %> |
-  <%= link_to "Back to expenses", expenses_path %>
-
-  <%= button_to "Destroy this expense", @expense, method: :delete %>
-</div>
+  <p style="color: green"><%= notice %></p>
+  <%= render @expense %>
+  <div>
+    <%= link_to "Edit this expense", edit_expense_path(@expense) %> |
+    <%= link_to "Back to expenses", expenses_path %>
+    <%= button_to "Destroy this expense", @expense, method: :delete %>
+  </div>
 </div>
