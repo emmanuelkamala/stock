@@ -1,0 +1,70 @@
+<div class="sidebar">
+  <div class="sidebar__logo">
+    <i class="fa-regular fa-thumbs-up"></i>
+    <span class="sidebar__logo-name">
+      Stock Control
+    </span>
+  </div>
+  <ul class="sidebar__nav-links">
+    <li>
+      <a href="/dashboard">
+        <i class="fa-solid fa-grip"></i>
+        Dashboard
+      </a>
+    </li>
+    <li>
+      <a href="/flocks">
+        <i class="fa-solid fa-layer-group"></i>
+        Flock
+      </a>
+    </li>
+    <li>
+      <a href="/incomes">
+        <i class="fa-solid fa-wallet"></i>
+        Income
+      </a>
+    </li>
+    <li>
+      <a href="/expenses">
+        <i class="fa-brands fa-sellcast"></i>
+        Expense
+      </a>
+    </li>
+    <li>
+      <a href="/report">
+        <i class="fa-solid fa-arrow-trend-up"></i>
+        Report
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        Logout
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div class="home__section">
+  <nav>
+    <div class="home__section-content">
+      <i class="fa-solid fa-bars sidebarBtn"></i>
+      <span class="dashboard">
+        <% content_for :title, @title %>
+        <span><%= @title %></span>
+      </span>
+    </div>
+    <div class="home__section-profile">
+      <%= link_to "Profile", '#', class: "home__section-profile__username" %>
+    </div>
+  </nav>
+</div>
+
+<script>
+  let sidebar = document.querySelector(".sidebar");
+  let sidebarBtn = document.querySelector(".sidebarBtn");
+
+  sidebarBtn.onclick = () => {
+    sidebar.classList.toggle("active");
+  }
+</script>

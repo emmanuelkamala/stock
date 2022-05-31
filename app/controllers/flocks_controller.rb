@@ -4,6 +4,7 @@ class FlocksController < ApplicationController
   # GET /flocks or /flocks.json
   def index
     @flocks = Flock.all
+    @title = 'Flocks'
   end
 
   # GET /flocks/1 or /flocks/1.json
