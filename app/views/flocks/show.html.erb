@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @flock %>
+
+<div>
+  <%= link_to "Edit this flock", edit_flock_path(@flock) %> |
+  <%= link_to "Back to flocks", flocks_path %>
+
+  <%= button_to "Destroy this flock", @flock, method: :delete %>
+</div>

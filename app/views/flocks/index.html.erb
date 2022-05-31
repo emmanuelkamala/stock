@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Flocks</h1>
+
+<div id="flocks">
+  <% @flocks.each do |flock| %>
+    <%= render flock %>
+    <p>
+      <%= link_to "Show this flock", flock %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New flock", new_flock_path %>
