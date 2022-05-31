@@ -58,12 +58,13 @@
 
   <div>
     <%= form.label :status_id, style: "display: block" %>
-    <%= form.text_field :status_id %>
+    <%= form.collection_select :status_id, Status.all, :id, :name, prompt: true, class: 'form-control' %>
   </div>
 
   <div>
     <%= form.label :type_id, style: "display: block" %>
-    <%= form.text_field :type_id %>
+    <%= form.collection_select :type_id, Type.all, :id, :name, prompt: true, class: 'form-control' %>
+
   </div>
 
   <div>

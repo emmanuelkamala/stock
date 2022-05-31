@@ -1,16 +1,11 @@
 <%= render 'layouts/sidebar' %>
 
 <div class="content__details">
-
-<p style="color: green"><%= notice %></p>
-
-<%= render @status %>
-
-<div>
-  <%= link_to "Edit this status", edit_status_path(@status) %> |
-  <%= link_to "Back to statuses", statuses_path %>
-
-  <%= button_to "Destroy this status", @status, method: :delete %>
-</div>
-
+  <p style="color: green"><%= notice %></p>
+  <%= render @status %>
+  <div>
+    <%= link_to "Edit this status", edit_status_path(@status) %> |
+    <%= link_to "Back to statuses", statuses_path %>
+    <%= button_to "Destroy this status", @status, method: :delete %>
+  </div>
 </div>
