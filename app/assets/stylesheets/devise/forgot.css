@@ -1,0 +1,51 @@
+.devise__forgot {
+  text-align: center;
+  margin: 5% auto;
+  width: 50%;
+  border: 1px solid rgb(181, 180, 180);
+  padding: 20px 0;
+  box-shadow: -4px 4px 5px rgb(215, 215, 215);
+  border-radius: 10px;
+}
+
+h2 {
+  color: rgb(65, 146, 49);
+}
+
+.devise__form {
+  margin: 2% auto;
+  width: 50%;
+}
+
+.details {
+  display: flex;
+  margin: 2% auto;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.devise__email-label, .devise__password-label {
+  width: 30%;
+  font-size: 1.2rem;
+}
+
+.devise__email-field, .devise__password-field {
+  height: 40px;
+  width: 70%;
+  border: 1px solid rgb(195, 194, 194);
+  border-radius: 4px;
+  font-size: 1.2rem;
+  padding: 0 10px;
+}
+
+.devise__forgot-btn {
+  background-color: rgb(51, 149, 51);
+  padding: 10px;
+  font-size: 1.4rem;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid rgb(217, 217, 217);
+  margin: 15px 0;
+}
