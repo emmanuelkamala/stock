@@ -139,3 +139,41 @@
 .home__section-profile__username:hover {
   color: rgb(206, 204, 204);
 }
+
+/* MEDIA QUERY */
+
+@media screen and (max-width: 1216px) {
+  .sidebar {
+    width: 60px;
+  }
+
+  .sidebar.active {
+    width: 220px;
+  } 
+
+  .home__section {
+    width: calc(100% - 60px);
+    left: 60px;
+  }
+
+  .content__details {
+    width: calc(100% - 60px);
+    left: 60px;
+  }
+
+  .sidebar.active ~ .home__section {
+    width: calc(100% - 220px);
+    left: 220px
+  }
+
+  .sidebar.active ~ .content__details {
+    width: calc(100% - 220px);
+    left: 220px
+  }
+}
+
+@media screen and (max-width: 658px) {
+  .dashboard {
+    display: none;
+  }
+}

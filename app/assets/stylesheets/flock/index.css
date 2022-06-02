@@ -8,6 +8,30 @@
   height: 100%;
 }
 
+.table-responsive {
+  overflow-x: auto;  
+  border-collapse: collapse;
+}
+
+.table-responsive tr:nth-child(even){background-color: #f2f2f2;}
+
+.table-row:hover {
+  background-color: rgb(250, 246, 246);
+  cursor: pointer;
+}
+
+.table-header {
+  background-color: #04AA6D;
+  color: #fff;
+}
+
+.table-header, .table-data {
+  width: 100px;
+  padding: 0 10px;
+  text-align: center;
+  border: 1px solid rgb(219, 218, 218);
+}
+
 .sidebar.active ~ .content__details {
   width: calc(100% - 60px);
   left: 60px;
@@ -21,4 +45,48 @@
   font-size: 1.2rem;
   padding: 0 10px;
   outline: none;
+}
+
+.btn-success, 
+.btn-danger, 
+.btn-secondary {
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.btn-success {
+  background-color: #04AA6D;
+  border-color: #04AA6D
+}
+
+.btn-success:hover {
+  background-color: #047149;
+}
+
+.btn-secondary {
+  background-color: rgb(119, 117, 117);
+  border-color: rgb(119, 117, 117);
+}
+
+.btn-secondary:hover {
+  background-color: rgb(87, 85, 85);
+}
+
+.btn-danger {
+  background-color: rgb(192, 10, 10);
+  border-color: rgb(192, 10, 10);
+}
+
+.btn-danger:hover {
+  background-color: rgb(137, 6, 6);
+}
+
+.resource-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
 }

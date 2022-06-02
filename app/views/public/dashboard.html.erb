@@ -1,58 +1,65 @@
 <%= render 'layouts/sidebar' %>
 
 <div class="content__details">
-  <div class="col-md-9 mt-5">
-    <h3 class="display-6 mb-4">Summary</h3>
-    <div class="row">
-      <div class="card col-sm-2 me-1">
-        <h6 class="text-center card-header">Total Current Flock</h6>
-        <span class="text-center p-3"><strong><%= Flock.sum(:current_stock) %></strong></span>
-      </div>
-    
-
-    
-      <div class="card col-3 me-1">
-        <h6 class="text-center card-header">Total Income</h6>
-        <span class="text-center p-3">
-          <strong><%= number_to_currency(@incomes.map(&:amount).sum, :unit => "Tshs. ", :delimiter => ",") %></strong>
-        </span>
+  <h2>Summary</h2>
+  <div class="dashboard__content">
+    <div class="dashboard__content-boxes">
+      <div class="box">
+        <div class="left-side">
+          <div class="box-topic">Total Flock</div>
+          <div class="number"><%= Flock.sum(:current_stock) %></div>
+        </div>
       </div>
 
-      <div class="card col-3 me-1">
-        <h6 class="text-center card-header">Total Expenses</h6>
-        <span class="text-center p-3">
-          <strong><%= number_to_currency(@expenses.map(&:total).sum, :unit => "Tshs. ", :delimiter => ",") %></strong>
-        </span>
+      <div class="box">
+        <div class="left-side">
+          <div class="box-topic">Total Income</div>
+          <div class="number"><%= number_to_currency(@incomes.map(&:amount).sum, :unit => "Tshs. ", :delimiter => ",") %></div>
+        </div>
       </div>
-    
 
-    
-      <div class="card col-sm-3">
-        <h6 class="text-center card-header">Profit</h6>
-        <span class="text-center p-3">
-          <% if @incomes.map(&:amount).sum > @expenses.map(&:total).sum %>
-            <span class="text-success">
-              <strong><%= number_to_currency(@incomes.map(&:amount).sum - @expenses.map(&:total).sum, :unit => "Tshs. ") %><strong>
+      <div class="box">
+        <div class="left-side">
+          <div class="box-topic">Total Expenses</div>
+          <div class="number"><%= number_to_currency(@expenses.map(&:total).sum, :unit => "Tshs. ", :delimiter => ",") %></div>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="left-side">
+          <div class="box-topic">Profit</div>
+          <div class="number">
+            <span class="text-center p-3">
+              <% if @incomes.map(&:amount).sum > @expenses.map(&:total).sum %>
+                <span class="text-success">
+                  <strong><%= number_to_currency(@incomes.map(&:amount).sum - @expenses.map(&:total).sum, :unit => "Tshs. ") %><strong>
+                </span>
+              <% else %>
+                <span class="text-danger"><strong> 0</strong></span>
+              <% end %>
             </span>
-          <% else %>
-            <span class="text-danger"><strong> 0</strong></span>
-          <% end %>
-        </span>
+          </div>
+        </div>
       </div>
 
-      <div class="card col-sm-3 mt-3">
-        <h6 class="text-center card-header">Loss</h6>
-        <span class="text-center p-3">
-          <% if @incomes.map(&:amount).sum < @expenses.map(&:total).sum %>
-            <span class="text-danger">
-              <strong><%= number_to_currency(@expenses.map(&:total).sum - @incomes.map(&:amount).sum, :unit => "Tshs. ")  %><strong>
+      <div class="box">
+        <div class="left-side">
+          <div class="box-topic">Loss</div>
+          <div class="number">
+            <span class="text-center p-3">
+              <% if @incomes.map(&:amount).sum < @expenses.map(&:total).sum %>
+                <span class="text-danger">
+                  <strong><%= number_to_currency(@expenses.map(&:total).sum - @incomes.map(&:amount).sum, :unit => "Tshs. ")  %><strong>
+                </span>
+              <% else %>
+                <span class="text-success"><strong>0</strong></span>
+              <% end %>
             </span>
-          <% else %>
-            <span class="text-success"><strong>0</strong></span>
-          <% end %>
-        </span>
+          </div>
+        </div>
       </div>
+
     </div>
+  </div>
 
-  <div>
 </div>

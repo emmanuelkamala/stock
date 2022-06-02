@@ -11,4 +11,8 @@ class Flock < ApplicationRecord
 
   belongs_to :status
   belongs_to :type
+
+  def left_stock
+    initial_stock - current_stock
+  end
 end

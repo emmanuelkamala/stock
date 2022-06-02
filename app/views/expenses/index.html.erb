@@ -6,14 +6,42 @@
 
 <h1>Expenses</h1>
 
-<div id="expenses">
-  <% @expenses.each do |expense| %>
-    <%= render expense %>
-    <p>
-      <%= link_to "Show this expense", expense %>
-    </p>
-  <% end %>
-</div>
+  <div class="table-responsive">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Category</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Unit Price</th>
+          <th scope="col">Total Expense</th>
+          <th scope="col">Description</th>
+          <th scope="col">Flock Type</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @expenses.each do |expense| %>
+          <tr>
+            <td class="text-center"><%= expense.date %></td>
+            <td class="text-center"><%= expense.category %></td>
+            <td class="text-center"><%= expense.quantity %></td>
+            <td class="text-center"><%= expense.unit_price %></td>
+            <td class="text-end"><%= number_to_currency(expense.total, :unit => "") %></td>
+            <td class="text-center"><%= expense.description %></td>
+            <td class="text-center"><%= expense.type.name %></td>
+            <td><%= link_to 'Show', expense, class: 'btn btn-sm btn-success text-light' %></td>
+            <td><%= link_to 'Edit', edit_expense_path(expense), class: 'btn btn-sm btn-secondary text-light' %></td>
+            <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger text-light' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <strong>Total Expenses</strong> = <%= number_to_currency(@expenses.map(&:total).sum, :unit => "Tshs. ", :delimiter => ",") %>
+  </div>
 
 <%= link_to "New expense", new_expense_path %>
 </div>
