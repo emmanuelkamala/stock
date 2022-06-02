@@ -3,9 +3,9 @@
 <div class="content__details">
   <p style="color: green"><%= notice %></p>
   <%= render @type %>
-  <div>
-    <%= link_to "Edit this type", edit_type_path(@type) %> |
-    <%= link_to "Back to types", types_path %>
-    <%= button_to "Destroy this type", @type, method: :delete %>
+  <div class="btn">
+    <%= link_to "Edit this type", edit_type_path(@type), class: "btn-secondary" %> 
+    <%= link_to "Back to types", types_path, class: "btn-back" %>
+    <%= button_to "Destroy this type", @type, method: :delete, class: "btn-danger" %>
   </div>
 </div>

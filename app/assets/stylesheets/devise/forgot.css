@@ -1,11 +1,14 @@
 .devise__forgot {
   text-align: center;
   margin: 5% auto;
-  width: 50%;
+  width: 40%;
   border: 1px solid rgb(181, 180, 180);
   padding: 20px 0;
   box-shadow: -4px 4px 5px rgb(215, 215, 215);
   border-radius: 10px;
+  background-color: #fff;
+  position: absolute;
+  left: 30vw;
 }
 
 h2 {
@@ -40,7 +43,7 @@ h2 {
 }
 
 .devise__forgot-btn {
-  background-color: rgb(51, 149, 51);
+  background-color: rgb(38, 40, 146);
   padding: 10px;
   font-size: 1.4rem;
   color: #fff;

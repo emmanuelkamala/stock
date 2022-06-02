@@ -1,37 +1,37 @@
-<div id="<%= dom_id expense %>">
-  <p>
-    <strong>Date:</strong>
-    <%= expense.date %>
+<div id="<%= dom_id expense %>" class="show">
+  <p class="show__items">
+    <span class="show__title"><strong>Date:</strong></span>
+    <span class="show__content"><%= expense.date %></span>
   </p>
 
-  <p>
-    <strong>Category:</strong>
-    <%= expense.category %>
+  <p class="show__items">
+    <span class="show__title"><strong>Category:</strong></span>
+    <span class="show__content"><%= expense.category %></span>
   </p>
 
-  <p>
-    <strong>Quantity:</strong>
-    <%= expense.quantity %>
+  <p class="show__items">
+    <span class="show__title"><strong>Quantity:</strong></span>
+    <span class="show__content"><%= expense.quantity %></span>
   </p>
 
-  <p>
-    <strong>Unit price:</strong>
-    <%= expense.unit_price %>
+  <p class="show__items">
+    <span class="show__title"><strong>Unit price:</strong></span>
+    <span class="show__content"><%= expense.unit_price %></span>
   </p>
 
-  <p>
-    <strong>Total amount:</strong>
-    <%= expense.total %>
+  <p class="show__items">
+    <span class="show__title"><strong>Total amount:</strong></span>
+    <span class="show__content"><%= expense.total %></span>
   </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= expense.description %>
+  <p class="show__items">
+    <span class="show__title"><strong>Description:</strong></span>
+    <span class="show__content"><%= expense.description %></span>
   </p>
 
-  <p>
-    <strong>Type:</strong>
-    <%= expense.type.name %>
+  <p class="show__items">
+    <span class="show__title"><strong>Type:</strong></span>
+    <span class="show__content"><%= expense.type.name %></span>
   </p>
 
 </div>

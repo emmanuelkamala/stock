@@ -26,7 +26,8 @@
 }
 
 .table-header, .table-data {
-  width: 100px;
+  width: auto;
+  height: 50px;
   padding: 0 10px;
   text-align: center;
   border: 1px solid rgb(219, 218, 218);
@@ -47,14 +48,29 @@
   outline: none;
 }
 
+.btn {
+  display: flex;
+}
+
 .btn-success, 
 .btn-danger, 
-.btn-secondary {
+.btn-secondary,
+.btn-back {
   color: #fff;
   padding: 10px;
   border-radius: 4px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-decoration: none;
+  margin: 10px;
+}
+
+.btn-back {
+  background: rgb(25, 25, 196);
+  border-color: rgb(25, 25, 196)
+}
+
+.btn-back:hover {
+  background: rgb(10, 10, 133);
 }
 
 .btn-success {

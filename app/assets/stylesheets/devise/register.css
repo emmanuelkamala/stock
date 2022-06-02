@@ -1,15 +1,18 @@
 .devise__register {
   text-align: center;
   margin: 5% auto;
-  width: 50%;
+  width: 40%;
   border: 1px solid rgb(181, 180, 180);
   padding: 20px 0;
   box-shadow: -4px 4px 5px rgb(215, 215, 215);
   border-radius: 10px;
+  background-color: #fff;
+  position: absolute;
+  left: 30vw;
 }
 
 h2 {
-  color: rgb(65, 146, 49);
+  color: rgb(36, 64, 157);
 }
 
 .devise__form {
@@ -41,7 +44,7 @@ h2 {
 }
 
 .devise__register-btn {
-  background-color: rgb(51, 149, 51);
+  background-color: rgb(36, 64, 157);;
   padding: 10px;
   font-size: 1.4rem;
   color: #fff;

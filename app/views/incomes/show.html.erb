@@ -3,9 +3,9 @@
 <div class="content__details">
   <p style="color: green"><%= notice %></p>
   <%= render @income %>
-  <div>
-    <%= link_to "Edit this income", edit_income_path(@income) %> |
-    <%= link_to "Back to incomes", incomes_path %>
-    <%= button_to "Destroy this income", @income, method: :delete %>
+  <div class="btn">
+    <%= link_to "Edit this income", edit_income_path(@income), class: "btn-secondary" %> |
+    <%= link_to "Back to incomes", incomes_path, class: "btn-back" %>
+    <%= button_to "Destroy this income", @income, method: :delete, class: "btn-danger" %>
   </div>
 </div>

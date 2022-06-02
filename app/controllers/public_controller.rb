@@ -1,8 +1,8 @@
 class PublicController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
-  def index
-
+  def report
+    @title = 'Report'
   end
 
   def dashboard

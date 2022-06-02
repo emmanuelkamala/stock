@@ -172,8 +172,5 @@
   }
 }
 
-@media screen and (max-width: 658px) {
-  .dashboard {
-    display: none;
-  }
-}
+
+

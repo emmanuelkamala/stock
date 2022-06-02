@@ -1,57 +1,56 @@
-<div id="<%= dom_id flock %>">
-  <p>
-    <strong>Batch no:</strong>
-    <%= flock.batch_no %>
+<div id="<%= dom_id flock %>" class="show">
+  <p class="show__items">
+    <span class="show__title"><strong>Batch no:</strong></span>
+    <span class="show__content"><%= flock.batch_no %></span>
   </p>
 
-  <p>
-    <strong>Date in:</strong>
-    <%= flock.date_in %>
+  <p class="show__items">
+    <span class="show__title"><strong>Date in:</strong></span>
+    <span class="show__content"><%= flock.date_in %></span>
   </p>
 
-  <p>
-    <strong>Retirement date:</strong>
-    <%= flock.retirement_date %>
+  <p class="show__items">
+    <span class="show__title"><strong>Retirement date:</strong></span>
+    <span class="show__content"><%= flock.retirement_date %></span>
   </p>
 
-  <p>
-    <strong>Source:</strong>
-    <%= flock.source %>
+  <p class="show__items">
+    <span class="show__title"><strong>Source:</strong></span>
+    <span class="show__content"><%= flock.source %></span>
   </p>
 
-  <p>
-    <strong>Flock stored:</strong>
-    <%= flock.flock_stored %>
+  <p class="show__items">
+    <span class="show__title"><strong>Flock stored:</strong></span>
+    <span class="show__content"><%= flock.flock_stored %></span>
   </p>
 
-  <p>
-    <strong>Initial stock:</strong>
-    <%= flock.initial_stock %>
+  <p class="show__items">
+    <span class="show__title"><strong>Initial stock:</strong></span>
+    <span class="show__content"><%= flock.initial_stock %></span>
   </p>
 
-  <p>
-    <strong>Current stock:</strong>
-    <%= flock.current_stock %>
+  <p class="show__items">
+    <span class="show__title"><strong>Current stock:</strong></span>
+    <span class="show__content"><%= flock.current_stock %></span>
   </p>
 
-  <p>
-    <strong>Age:</strong>
-    <%= flock.age %>
+  <p class="show__items">
+    <span class="show__title"><strong>Age:</strong></span>
+    <span class="show__content"><%= flock.age %></span>
   </p>
 
-  <p>
-    <strong>Notes:</strong>
-    <%= flock.notes %>
+  <p class="show__items">
+    <span class="show__title"><strong>Notes:</strong></span>
+    <span class="show__content"><%= flock.notes %></span>
   </p>
 
-  <p>
-    <strong>Status:</strong>
-    <%= flock.status.name %>
+  <p class="show__items">
+    <span class="show__title"><strong>Status:</strong></span>
+    <span class="show__content"><%= flock.status.name %></span>
   </p>
 
-  <p>
-    <strong>Type:</strong>
-    <%= flock.type.name %>
+  <p class="show__items">
+    <span class="show__title"><strong>Type:</strong></span>
+    <span class="show__content"><%= flock.type.name %></span>
   </p>
-
 </div>

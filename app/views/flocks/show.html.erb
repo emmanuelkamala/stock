@@ -3,10 +3,9 @@
 <div class="content__details">
   <p style="color: green"><%= notice %></p>
   <%= render @flock %>
-  <div>
-    <%= link_to "Edit this flock", edit_flock_path(@flock) %> |
-    <%= link_to "Back to flocks", flocks_path %>
-
-    <%= button_to "Destroy this flock", @flock, method: :delete %>
+  <div class="btn">
+    <%= link_to "Edit this flock", edit_flock_path(@flock), class: "btn-secondary" %> 
+    <%= link_to "Back to flocks", flocks_path, class: "btn-back" %> 
+    <%= button_to "Destroy this flock", @flock, method: :delete, class: "btn-danger" %>
   </div>
 </div>
