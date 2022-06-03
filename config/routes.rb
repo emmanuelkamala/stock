@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     get '/register', to: 'devise/registrations#new', as: :register
     authenticated :user do
       root 'public#dashboard', as: :authenticated_root
+      get '/edit', to: 'devise/registrations#edit', as: :edit_user
+      put '/update', to: 'devise/registrations#update', as: :update_user
     end
   
     unauthenticated do

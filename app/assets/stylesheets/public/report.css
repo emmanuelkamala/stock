@@ -13,3 +13,16 @@
   text-align: center;
   cursor: pointer;
 }
+
+.report__header-financial:hover,
+.report__header-production:hover {
+  background-color: rgb(42, 168, 42);
+}
+
+.report__header-link {
+  text-decoration: none;
+}
+
+.report__header-link:hover {
+  color: #fff;
+}
