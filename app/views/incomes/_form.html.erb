@@ -38,7 +38,7 @@
 
   <div class="form__content">
     <%= form.label :type_id, style: "display: block", class: "form__content-label" %>
-    <%= form.collection_select :type_id, Type.all, :id, :name, {prompt: true}, class: 'form-control', class: "form__content-field" %>
+    <%= form.collection_select :type_id, Type.all, :id, :name, {prompt: true}, class: 'form-control form__content-field' %>
   </div>
 
   <div>

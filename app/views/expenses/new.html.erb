@@ -1,10 +1,12 @@
 <%= render 'layouts/sidebar' %>
 
 <div class="content__details">
-  <h1>New expense</h1>
+  <div class="resource-title">
+    <h1>Add Expense</h1>
+    <div>
+      <%= link_to "Back to expenses", expenses_path, class: "btn-back" %>
+    </div>
+  </div>
   <%= render "form", expense: @expense %>
   <br>
-  <div>
-    <%= link_to "Back to expenses", expenses_path %>
-  </div>
 </div>
