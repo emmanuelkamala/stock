@@ -1,10 +1,13 @@
 <%= render 'layouts/sidebar' %>
 
 <div class="content__details">
-  <h1>Add flock</h1>
+  <div class="resource-title">
+      <h1>Add flock</h1>
+      <div>
+        <%= link_to "Back to flocks", flocks_path, class: "btn-back" %>
+      </div>
+  </div>
   <%= render "form", flock: @flock %>
   <br>
-  <div>
-    <%= link_to "Back to flocks", flocks_path %>
-  </div>
+
 </div>

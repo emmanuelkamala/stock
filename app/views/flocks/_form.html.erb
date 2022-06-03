@@ -11,62 +11,62 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :batch_no, style: "display: block" %>
-    <%= form.number_field :batch_no %>
+  <div class="form__content">
+    <%= form.label :batch_no, style: "display: block", class: "form__content-label" %>
+    <%= form.number_field :batch_no, class: "form__content-field" %>
+  </div>
+
+  <div class="form__content">
+    <%= form.label :date_in, style: "display: block", class: "form__content-label" %>
+    <%= form.datetime_field :date_in, class: "form__content-field" %>
+  </div>
+
+  <div class="form__content">
+    <%= form.label :retirement_date, style: "display: block", class: "form__content-label" %>
+    <%= form.datetime_field :retirement_date, class: "form__content-field" %>
+  </div>
+
+  <div class="form__content">
+    <%= form.label :source, style: "display: block", class: "form__content-label" %>
+    <%= form.text_field :source, class: "form__content-field" %>
+  </div>
+
+  <div class="form__content">
+    <%= form.label :flock_stored, style: "display: block", class: "form__content-label" %>
+    <%= form.text_field :flock_stored, class: "form__content-field" %>
+  </div>
+
+  <div class="form__content">
+    <%= form.label :initial_stock, style: "display: block", class: "form__content-label" %>
+    <%= form.number_field :initial_stock, class: "form__content-field" %>
+  </div>
+
+  <div class="form__content">
+    <%= form.label :current_stock, style: "display: block", class: "form__content-label" %>
+    <%= form.number_field :current_stock, class: "form__content-field" %>
+  </div>
+
+  <div class="form__content">
+    <%= form.label :age, style: "display: block", class: "form__content-label" %>
+    <%= form.number_field :age, class: "form__content-field" %>
+  </div>
+
+  <div class="form__content">
+    <%= form.label :notes, style: "display: block", class: "form__content-label" %>
+    <%= form.text_area :notes, class: "form__content-field" %>
+  </div>
+
+  <div class="form__content">
+    <%= form.label :status_id, style: "display: block", class: "form__content-label" %>
+    <%= form.collection_select :status_id, Status.all, :id, :name, {prompt: true}, class: 'form-control', class: "form__content-field" %>
+  </div>
+
+  <div class="form__content">
+    <%= form.label :type_id, style: "display: block", class: "form__content-label" %>
+    <%= form.collection_select :type_id, Type.all, :id, :name, {prompt: true}, class: 'form-control', class: "form__content-field" %>
   </div>
 
   <div>
-    <%= form.label :date_in, style: "display: block" %>
-    <%= form.datetime_field :date_in %>
-  </div>
-
-  <div>
-    <%= form.label :retirement_date, style: "display: block" %>
-    <%= form.datetime_field :retirement_date %>
-  </div>
-
-  <div>
-    <%= form.label :source, style: "display: block" %>
-    <%= form.text_field :source %>
-  </div>
-
-  <div>
-    <%= form.label :flock_stored, style: "display: block" %>
-    <%= form.text_field :flock_stored %>
-  </div>
-
-  <div>
-    <%= form.label :initial_stock, style: "display: block" %>
-    <%= form.number_field :initial_stock %>
-  </div>
-
-  <div>
-    <%= form.label :current_stock, style: "display: block" %>
-    <%= form.number_field :current_stock %>
-  </div>
-
-  <div>
-    <%= form.label :age, style: "display: block" %>
-    <%= form.number_field :age %>
-  </div>
-
-  <div>
-    <%= form.label :notes, style: "display: block" %>
-    <%= form.text_area :notes %>
-  </div>
-
-  <div>
-    <%= form.label :status_id, style: "display: block" %>
-    <%= form.collection_select :status_id, Status.all, :id, :name, {prompt: true}, class: 'form-control' %>
-  </div>
-
-  <div>
-    <%= form.label :type_id, style: "display: block" %>
-    <%= form.collection_select :type_id, Type.all, :id, :name, {prompt: true}, class: 'form-control' %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <%= form.submit class: "btn-success" %>
   </div>
 <% end %>

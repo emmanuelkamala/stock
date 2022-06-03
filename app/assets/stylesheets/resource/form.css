@@ -1,0 +1,27 @@
+.form__content {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form__content-label {
+  width: 50%;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.form__content-field {
+  height: 40px;
+  width: 50% !important;
+  border: 1px solid rgb(195, 194, 194);
+  border-radius: 4px;
+  font-size: 1.2rem;
+  padding: 0 10px;
+  outline: none;
+}
+
+.form__content-btn {
+  
+}
