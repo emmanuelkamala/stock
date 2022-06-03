@@ -118,7 +118,7 @@
 
 .devise__login {
   text-align: center;
-  margin: 5% auto;
+  margin: 0 auto;
   width: 40%;
   border: 1px solid rgb(181, 180, 180);
   padding: 20px 0;
@@ -127,6 +127,7 @@
   background-color: #fff;
   position: absolute;
   left: 30vw;
+  top: 20vh;
 }
 
 h2 {
