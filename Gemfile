@@ -74,3 +74,9 @@ end
 gem "devise", "~> 4.8"
 
 gem "font-awesome-rails", "~> 4.7"
+
+gem "chartkick", "~> 4.1"
+
+gem "groupdate", "~> 6.1"
+
+gem "rails_charts", "~> 0.0.3"

@@ -2,3 +2,7 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import "@fortawesome/fontawesome-free/js/all"
+import "chartkick"
+import "Chart.bundle"
+import "echarts"
+import "echarts/theme/dark"

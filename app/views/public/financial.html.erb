@@ -1,1 +1,6 @@
 <%= render 'layouts/sidebar' %>
+<div class="content__details">
+<%= line_chart Income.group(:created_at).count %>
+
+</div>
+

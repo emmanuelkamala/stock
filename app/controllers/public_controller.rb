@@ -1,5 +1,4 @@
 class PublicController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
 
   def report
     @title = 'Report'
@@ -14,9 +13,11 @@ class PublicController < ApplicationController
 
   def financial
     @title = 'Financial'
+   # @incomes = Income.created_between(1.year.ago, Time.now)
   end
 
   def production
     @title = 'Production'
+    # @flocks = Flock.group_by_month(:created_at).count
   end
 end

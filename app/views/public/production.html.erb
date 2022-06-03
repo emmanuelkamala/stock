@@ -1,1 +1,7 @@
 <%= render 'layouts/sidebar' %>
+
+<div class="content__details">
+
+<%= line_chart Flock.group_by_month(:created_at).count %>
+
+</div>
