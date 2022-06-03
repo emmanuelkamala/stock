@@ -1,10 +1,13 @@
 <%= render 'layouts/sidebar' %>
 
 <div class="content__details">
-  <h1>New income</h1>
+  <div class="resource-title">
+    <h1>New income</h1>
+    <div>
+      <%= link_to "Back to incomes", incomes_path, class: "btn-back" %>
+    </div>
+  </div>
   <%= render "form", income: @income %>
   <br>
-  <div>
-    <%= link_to "Back to incomes", incomes_path %>
-  </div>
+  
 </div>
