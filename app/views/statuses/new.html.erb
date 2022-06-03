@@ -1,10 +1,13 @@
 <%= render 'layouts/sidebar' %>
 
 <div class="content__details">
-  <h1>New status</h1>
+  <div class="resource-title">
+    <h1>Add Status</h1>
+    <div>
+      <%= link_to "Back to statuses", statuses_path, class: "btn-back" %>
+    </div>
+  </div>
+ 
   <%= render "form", status: @status %>
   <br>
-  <div>
-    <%= link_to "Back to statuses", statuses_path %>
-  </div>
 </div>
