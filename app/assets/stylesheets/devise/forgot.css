@@ -53,3 +53,12 @@ h2 {
   border: 1px solid rgb(217, 217, 217);
   margin: 15px 0;
 }
+
+/* MEDIA QUERY */
+
+@media screen and (max-width: 900px) {
+  .devise__forgot {
+    width: 80% !important;
+    left: 10% !important;
+  }
+}
