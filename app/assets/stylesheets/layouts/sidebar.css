@@ -165,15 +165,6 @@
     left: 220px;
   }
 
-  /* .home__section nav {
-    left: 60px;
-  } */
-
-  /* .active ~ .home__section nav {
-    width: calc(100% - 220px);
-    left: 220px;
-  } */
-
   .content__details {
     width: calc(100% - 60px) !important;
     left: 60px !important;
