@@ -26,3 +26,16 @@
 .report__header-link:hover {
   color: #fff;
 }
+
+@media screen and (max-width: 640px) {
+  .report {
+    flex-direction: column;
+  }
+
+  .report__header-financial,
+  .report__header-production {
+    width: 60%;
+    margin: 10px auto;
+    text-align: center;
+  }
+}
