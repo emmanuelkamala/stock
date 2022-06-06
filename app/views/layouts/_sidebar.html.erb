@@ -10,49 +10,49 @@
     <li>
       <%= link_to(dashboard_path) do %>
         <i class="fa-solid fa-grip"></i>
-        Dashboard
+        <span class="sidebar__nav-links__list">Dashboard</span>
       <% end %>
     </li>
     <li>
       <%= link_to(flocks_path) do %>
         <i class="fa-solid fa-layer-group"></i>
-        Flock
+        <span class="sidebar__nav-links__list">Flock</span>
       <% end %>
     </li>
     <li>
       <%= link_to(incomes_path) do %>
         <i class="fa-solid fa-wallet"></i>
-        Income
+        <span class="sidebar__nav-links__list">Income</span>
       <% end %>
     </li>
     <li>
       <%= link_to(expenses_path) do %>
         <i class="fa-solid fa-cart-shopping"></i>
-        Expense
+        <span class="sidebar__nav-links__list">Expense</span>
       <% end %>
     </li>
      <li>
       <%= link_to(types_path) do %>
         <i class="fa-solid fa-toolbox"></i>
-        Type
+        <span class="sidebar__nav-links__list">Type</span>
       <% end %>
     </li>
     <li>
       <%= link_to(statuses_path) do %>
         <i class="fa-solid fa-signal"></i>
-        Status 
+        <span class="sidebar__nav-links__list">Status</span>
       <% end %>
     </li>
     <li>
       <%= link_to(report_path) do %>
         <i class="fa-solid fa-arrow-trend-up"></i>
-        Report
+        <span class="sidebar__nav-links__list">Report</span>
       <% end %>
     </li>
     <li>
       <%= button_to(destroy_user_session_path, method: :delete, class: 'logout') do %>
         <i class="fa-solid fa-arrow-right-from-bracket"></i>
-        Logout
+        <span class="sidebar__nav-links__list">Logout</span>
       <% end %>
     </li>
   </ul>
@@ -76,9 +76,18 @@
 <script>
   let sidebar = document.querySelector(".sidebar");
   let sidebarBtn = document.querySelector(".sidebarBtn");
+  let sidebarNav = document.querySelectorAll(".sidebar__nav-links__list");
 
   sidebarBtn.onclick = () => {
     sidebar.classList.toggle("active");
+
+    // for (let i = 0; i < sidebarNav.length; i++) {
+    //   if (sidebarNav[i].style.display === "none"){
+    //     sidebarNav[i].style.display = "block"
+    //   } else {
+    //     sidebarNav[i].style.display = "none"
+    //   } 
+    // }
   }
 </script>
 
