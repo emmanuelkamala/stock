@@ -46,6 +46,10 @@
     margin: 0 auto;
   }
 
+  .form__content-field {
+    margin-bottom: 20px;
+  }
+
   .form__submit {
     margin-top: 20px;
     text-align: center;
