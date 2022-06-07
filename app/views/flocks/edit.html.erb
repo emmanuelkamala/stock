@@ -1,7 +1,9 @@
 <%= render 'layouts/sidebar' %>
 <div class="content__details">
   <h1>Editing flock</h1>
-  <%= render "form", flock: @flock %>
+  <%= turbo_frame_tag "flock_#{@flock.id}" do %>
+    <%= render "form", flock: @flock %>
+  <% end %>
   <br>
   <div class="btn">
     <%= link_to "Show this flock", @flock, class: "btn-success" %> 

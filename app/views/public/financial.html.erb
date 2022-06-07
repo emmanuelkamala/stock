@@ -1,6 +1,5 @@
 <%= render 'layouts/sidebar' %>
 <div class="content__details">
-<%= line_chart Income.group_by_week(:created_at).count %>
-
+  <%= line_chart Income.group_by_week(:created_at).count %>
 </div>
 

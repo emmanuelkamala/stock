@@ -7,7 +7,9 @@
         <%= link_to "Back", flocks_path, class: "btn-back" %>
       </div>
   </div>
-  <%= render "form", flock: @flock %>
+    <%= turbo_frame_tag "turbo_flock" do %>
+      <%= render "form", flock: @flock %>
+    <% end %>
   <br>
 
 </div>

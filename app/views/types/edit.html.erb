@@ -2,7 +2,9 @@
 
 <div class="content__details">
   <h1>Editing type</h1>
-  <%= render "form", type: @type %>
+  <%= turbo_frame_tag "type_#{@type.id}" do %>
+    <%= render "form", type: @type %>
+  <% end %>
   <br>
   <div>
     <%= link_to "Show this type", @type %> |
