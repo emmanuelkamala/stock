@@ -8,47 +8,47 @@
     </div>
 
     <div class="table-responsive">
-  <table class="table-striped">
-    <thead>
-      <tr>
-        <th class="table-header">Batch no</th>
-        <th class="table-header">Date in</th>
-        <th class="table-header">Retirement date</th>
-        <th class="table-header">Type</th>
-        <th class="table-header">Source</th>
-        <th class="table-header">Stored</th>
-        <th class="table-header">Initial stock</th>
-        <th class="table-header">Current stock</th>
-        <th class="table-header">Left stock</th>
-        <th class="table-header">Age</th>
-        <th class="table-header">Notes</th>
-        <th class="table-header">Status</th>
-        <th colspan="3" class="table-header"></th>
-      </tr>
-    </thead>
+      <table class="table-striped">
+        <thead>
+          <tr>
+            <th class="table-header">Batch no</th>
+            <th class="table-header">Date in</th>
+            <th class="table-header">Retirement date</th>
+            <th class="table-header">Type</th>
+            <th class="table-header">Source</th>
+            <th class="table-header">Stored</th>
+            <th class="table-header">Initial stock</th>
+            <th class="table-header">Current stock</th>
+            <th class="table-header">Left stock</th>
+            <th class="table-header">Age</th>
+            <th class="table-header">Notes</th>
+            <th class="table-header">Status</th>
+            <th colspan="3" class="table-header"></th>
+          </tr>
+        </thead>
 
-    <tbody>
-      <% @flocks.each do |flock| %>
-        <tr class="table-row">
-          <td class="table-data"><%= flock.batch_no %></td>
-          <td class="table-data"><%= flock.date_in %></td>
-          <td class="table-data"><%= flock.retirement_date %></td>
-          <td class="table-data"><%= flock.type.name %></td>
-          <td class="table-data"><%= flock.source %></td>
-          <td class="table-data"><%= flock.flock_stored %></td>
-          <td class="table-data"><%= flock.initial_stock %></td>
-          <td class="table-data"><%= flock.current_stock %></td>
-          <td class="table-data"><%= flock.left_stock %></td>
-          <td class="table-data"><%= flock.age %></td>
-          <td class="table-data"><%= flock.notes %></td>
-          <td class="table-data"><%= flock.status.name %></td>
-          <td class="table-data"><%= link_to 'Show', flock, class: 'btn-success' %></td>
-          <td class="table-data"><%= link_to 'Edit', edit_flock_path(flock), class: 'btn-secondary' %></td>
-          <td class="table-data"><%= link_to 'Destroy', flock, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-danger' %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  </div>
+        <tbody>
+          <% @flocks.each do |flock| %>
+            <tr class="table-row">
+              <td class="table-data"><%= flock.batch_no %></td>
+              <td class="table-data"><%= flock.date_in %></td>
+              <td class="table-data"><%= flock.retirement_date %></td>
+              <td class="table-data"><%= flock.type.name %></td>
+              <td class="table-data"><%= flock.source %></td>
+              <td class="table-data"><%= flock.flock_stored %></td>
+              <td class="table-data"><%= flock.initial_stock %></td>
+              <td class="table-data"><%= flock.current_stock %></td>
+              <td class="table-data"><%= flock.left_stock %></td>
+              <td class="table-data"><%= flock.age %></td>
+              <td class="table-data"><%= flock.notes %></td>
+              <td class="table-data"><%= flock.status.name %></td>
+              <td class="table-data"><%= link_to 'Show', flock, class: 'btn-success' %></td>
+              <td class="table-data"><%= link_to 'Edit', edit_flock_path(flock), class: 'btn-secondary' %></td>
+              <td class="table-data"><%= link_to 'Destroy', flock, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-danger' %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

@@ -18,6 +18,6 @@ class PublicController < ApplicationController
 
   def production
     @title = 'Production'
-    # @flocks = Flock.group_by_month(:created_at).count
+    @flocks = Flock.all
   end
 end
