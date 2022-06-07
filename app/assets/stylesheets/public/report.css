@@ -1,15 +1,17 @@
 .report {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   margin: 50px auto;
 }
 
 .report__header-financial, .report__header-production {
-  width: 30%;
+  width: 300px;
   padding: 10px;
   text-align: center;
   cursor: pointer;
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 4px;
 }
 
 .report__header-financial:hover,
