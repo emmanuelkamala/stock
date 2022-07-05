@@ -4,6 +4,12 @@ class IncomesController < ApplicationController
   def index
     @incomes = Income.all
     @title = 'Incomes'
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @incomes.to_csv, filename: "incomes-#{Date.today}.csv" }
+    end
+
   end
 
   def report
