@@ -8,43 +8,43 @@
   </div>
   <ul class="sidebar__nav-links">
     <li>
-      <%= link_to(dashboard_path) do %>
+      <%= link_to(dashboard_path, remote: true) do %>
         <i class="fa-solid fa-grip"></i>
         <span class="sidebar__nav-links__list">Dashboard</span>
       <% end %>
     </li>
     <li>
-      <%= link_to(flocks_path) do %>
+      <%= link_to(flocks_path, remote: true) do %>
         <i class="fa-solid fa-layer-group"></i>
         <span class="sidebar__nav-links__list">Flock</span>
       <% end %>
     </li>
     <li>
-      <%= link_to(incomes_path) do %>
+      <%= link_to(incomes_path, remote: true) do %>
         <i class="fa-solid fa-wallet"></i>
         <span class="sidebar__nav-links__list">Income</span>
       <% end %>
     </li>
     <li>
-      <%= link_to(expenses_path) do %>
+      <%= link_to(expenses_path, remote: true) do %>
         <i class="fa-solid fa-cart-shopping"></i>
         <span class="sidebar__nav-links__list">Expense</span>
       <% end %>
     </li>
      <li>
-      <%= link_to(types_path) do %>
+      <%= link_to(types_path, remote: true) do %>
         <i class="fa-solid fa-toolbox"></i>
         <span class="sidebar__nav-links__list">Type</span>
       <% end %>
     </li>
     <li>
-      <%= link_to(statuses_path) do %>
+      <%= link_to(statuses_path, remote: true) do %>
         <i class="fa-solid fa-signal"></i>
         <span class="sidebar__nav-links__list">Status</span>
       <% end %>
     </li>
     <li>
-      <%= link_to(report_path) do %>
+      <%= link_to(report_path, remote: true) do %>
         <i class="fa-solid fa-arrow-trend-up"></i>
         <span class="sidebar__nav-links__list">Report</span>
       <% end %>

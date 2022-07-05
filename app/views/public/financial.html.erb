@@ -1,4 +1,16 @@
 <%= render 'layouts/sidebar' %>
+
+<div class="row">
+  <h2>Search...</h2>
+  <div class="">
+    <%=  form_tag incomes_path, method: :get do %>
+      <%= text_field_tag 'search[date_from]', @search.date_from %>
+      <%= text_field_tag 'search[date_to]', @search.date_to %>
+      <%= submit_tag 'Search', class: '' %>
+    <% end %>
+  </div>
+</div>
+
 <div class="content__details">
   <%= line_chart Income.group_by_week(:created_at).count %>
 </div>
