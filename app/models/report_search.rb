@@ -1,4 +1,4 @@
-class FinancialSearch < ApplicationRecord
+class ReportSearch < ApplicationRecord
   attr_reader :date_from, :date_to
 
   def initialize(params)
@@ -22,5 +22,4 @@ class FinancialSearch < ApplicationRecord
   rescue ArgumentError, TypeError 
     default
   end
-
 end

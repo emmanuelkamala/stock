@@ -13,7 +13,7 @@ class IncomesController < ApplicationController
   end
 
   def report
-    @search = FinancialSearch.new(params[:search])
+    @search = ReportSearch.new(params[:search])
     @incomes = @search.income_scope
     @title = 'Incomes Report'
   end
