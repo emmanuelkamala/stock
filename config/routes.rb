@@ -11,8 +11,6 @@ Rails.application.routes.draw do
     end
   end
   get '/dashboard', to: 'public#dashboard'
-  get '/financial', to: 'public#financial'
-  get '/production', to: 'public#production'
   get '/report', to: 'public#report'
   get '/income/report', to: 'incomes#report'
   get '/flock/report', to: 'flocks#report'
