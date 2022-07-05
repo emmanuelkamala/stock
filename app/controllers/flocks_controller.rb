@@ -6,6 +6,12 @@ class FlocksController < ApplicationController
     @title = 'All Flocks'
   end
 
+  def report
+    @search = FinancialSearch.new(params[:search])
+    @flocks = @search.flock_scope
+    @title = 'Flocks Report'
+  end
+
   def show
     @title = "Flock #{@flock.id}"
   end

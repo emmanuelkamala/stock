@@ -1,0 +1,23 @@
+<%= render 'layouts/sidebar' %>
+
+<div class="content__details">
+  <p style="color: green"><%= notice %></p>
+
+    <div class="row">
+      <h2>Flock Report Stats</h2>
+      <div class="search__content">
+        <%=  form_tag flock_report_path, method: :get do %>
+          <div class="search__content-input">
+          From: <%= date_field_tag 'search[date_from]', @search.date_from, class: "search__content-field" %>
+          </div>
+          <div class="search__content-input">
+          To: <%= date_field_tag 'search[date_to]', @search.date_to, class: "search__content-field" %>
+          <%= submit_tag 'Search', class: 'btn-success' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <%= line_chart @flocks.group_by_day(:date_in).count %>
+
+  </div>
+</div>

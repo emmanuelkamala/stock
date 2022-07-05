@@ -7,8 +7,12 @@ class FinancialSearch < ApplicationRecord
     @date_to = parsed_date(params[:date_to], Date.today.to_s)
   end
 
-  def scope 
+  def income_scope 
     Income.where('date BETWEEN ? AND ?', @date_from, @date_to)
+  end
+
+  def flock_scope
+    Flock.where('date_in BETWEEN ? AND ?', @date_from, @date_to)
   end
 
   private 

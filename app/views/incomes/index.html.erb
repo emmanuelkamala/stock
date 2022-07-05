@@ -7,17 +7,6 @@
       <%= link_to "Add Income", new_income_path, class: "btn-success" %>
     </div>
 
-    <div class="row">
-      <h2>Search...</h2>
-      <div class="">
-        <%=  form_tag incomes_path, method: :get do %>
-          <%= date_field_tag 'search[date_from]', @search.date_from %>
-          <%= date_field_tag 'search[date_to]', @search.date_to %>
-          <%= submit_tag 'Search', class: '' %>
-        <% end %>
-      </div>
-    </div>
-
     <div class="table-responsive">
 
     <table class="table-striped">
