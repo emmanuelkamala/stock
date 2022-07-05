@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/financial', to: 'public#financial'
   get '/production', to: 'public#production'
   get '/report', to: 'public#report'
+  get '/income/report', to: 'incomes#report'
   devise_for :users
   resources :incomes
   resources :flocks

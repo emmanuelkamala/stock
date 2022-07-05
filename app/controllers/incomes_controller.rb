@@ -2,8 +2,17 @@ class IncomesController < ApplicationController
   before_action :set_income, only: %i[ show edit update destroy ]
 
   def index
-    @incomes = Income.all
+    #@incomes = Income.all
+    @search = FinancialSearch.new(params[:search])
+    @incomes = @search.scope
     @title = 'Incomes'
+  end
+
+  def report
+    #@incomes = Income.all
+    @search = FinancialSearch.new(params[:search])
+    @incomes = @search.scope
+    @title = 'Incomes Report'
   end
 
   def show

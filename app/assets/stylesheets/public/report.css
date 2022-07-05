@@ -39,3 +39,20 @@
     text-align: start;
   }
 }
+
+.search__content {
+  margin-bottom: 20px;
+}
+
+.search__content-input {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+
+.search__content-field {
+  height: 40px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid rgb(233, 230, 230);
+}

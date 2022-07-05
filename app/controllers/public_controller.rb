@@ -14,6 +14,8 @@ class PublicController < ApplicationController
   def financial
     @title = 'Financial'
    # @incomes = Income.created_between(1.year.ago, Time.now)
+   @search = FinancialSearch.new(params[:search])
+   @incomes = @search.scope
   end
 
   def production
