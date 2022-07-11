@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_09_073352) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_11_075555) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "expenses", force: :cascade do |t|
-    t.datetime "date"
+    t.date "date"
     t.string "category"
     t.integer "quantity"
     t.integer "unit_price"
@@ -51,7 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_09_073352) do
   end
 
   create_table "incomes", force: :cascade do |t|
-    t.datetime "date"
+    t.date "date"
     t.string "category"
     t.integer "quantity"
     t.integer "unit_price"
