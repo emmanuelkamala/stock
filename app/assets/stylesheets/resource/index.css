@@ -57,9 +57,9 @@
 .btn-secondary,
 .btn-back {
   color: #fff;
-  padding: 10px;
+  padding: 6px;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: 0.8rem;
   text-decoration: none;
   margin: 10px;
   cursor: pointer;
