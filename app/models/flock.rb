@@ -15,4 +15,8 @@ class Flock < ApplicationRecord
   def current_stock
     initial_stock - died_stock
   end
+
+  def total_current_stock
+    Flock.sum(:select => 'initial_stock - died_stock')
+  end
 end
