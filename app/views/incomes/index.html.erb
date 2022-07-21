@@ -28,9 +28,9 @@
           <tr class="table-row">
             <td class="table-data"><%= income.date %></td>
             <td class="table-data"><%= income.category %></td>
-            <td class="table-data"><%= income.quantity %></td>
-            <td class="table-data"><%= income.unit_price %></td>
-            <td class="table-data"><%= number_to_currency(income.amount, :unit => "") %></td>
+            <td class="table-data right"><%= income.quantity %></td>
+            <td class="table-data right"><%= income.unit_price %></td>
+            <td class="table-data right"><%= number_to_currency(income.amount, :unit => "") %></td>
             <td class="table-data"><%= income.description %></td>
             <td class="table-data"><%= income.type.name %></td>
             <td class="table-data"><%= link_to 'Show', income, class: 'btn-success' %></td>

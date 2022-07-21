@@ -27,9 +27,9 @@
           <tr class="table-row">
             <td class="table-data"><%= expense.date %></td>
             <td class="table-data"><%= expense.category %></td>
-            <td class="table-data"><%= expense.quantity %></td>
-            <td class="table-data"><%= expense.unit_price %></td>
-            <td class="table-data"><%= number_to_currency(expense.total, :unit => "") %></td>
+            <td class="table-data right"><%= expense.quantity %></td>
+            <td class="table-data right"><%= expense.unit_price %></td>
+            <td class="table-data right"><%= number_to_currency(expense.total, :unit => "") %></td>
             <td class="table-data"><%= expense.description %></td>
             <td class="table-data"><%= expense.type.name %></td>
             <td><%= link_to 'Show', expense, class: 'btn-success' %></td>
