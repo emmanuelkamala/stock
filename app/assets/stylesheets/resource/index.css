@@ -23,6 +23,7 @@
 .table-header {
   background-color: #04AA6D;
   color: #fff;
+  text-align: left;
 }
 
 .table-header, .table-data {
