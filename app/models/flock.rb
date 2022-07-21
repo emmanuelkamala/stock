@@ -5,14 +5,14 @@ class Flock < ApplicationRecord
   validates :source, presence: true 
   validates :flock_stored, presence: true 
   validates :initial_stock, presence: true 
-  validates :current_stock, presence: true 
+  validates :died_stock, presence: true 
   validates :age, presence: true 
   validates :status_id, presence: true 
 
   belongs_to :status
   belongs_to :type
 
-  def left_stock
-    initial_stock - current_stock
+  def current_stock
+    initial_stock - died_stock
   end
 end
