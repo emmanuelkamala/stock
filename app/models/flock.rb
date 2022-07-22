@@ -6,7 +6,7 @@ class Flock < ApplicationRecord
   validates :flock_stored, presence: true 
   validates :initial_stock, presence: true 
   validates :died_stock, presence: true 
-  validates :age, presence: true 
+  #validates :age, presence: true 
   validates :status_id, presence: true 
 
   belongs_to :status
@@ -19,4 +19,9 @@ class Flock < ApplicationRecord
   def total_current_stock
     Flock.sum(:select => 'initial_stock - died_stock')
   end
+
+  def age_in_weeks
+    Time.now - date_in
+  end
+
 end

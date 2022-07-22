@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_21_091849) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_22_144019) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -34,19 +34,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_21_091849) do
 
   create_table "flocks", force: :cascade do |t|
     t.integer "batch_no"
-    t.date "date_in"
-    t.date "retirement_date"
+    t.datetime "date_in"
+    t.datetime "retirement_date"
     t.string "source"
     t.string "flock_stored"
     t.integer "initial_stock"
-    t.integer "died_stock"
+    t.integer "current_stock"
     t.integer "age"
     t.text "notes"
-    t.bigint "status_id"
     t.bigint "type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["status_id"], name: "index_flocks_on_status_id"
+    t.string "status"
     t.index ["type_id"], name: "index_flocks_on_type_id"
   end
 
@@ -64,12 +63,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_21_091849) do
   end
 
   create_table "report_searches", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "statuses", force: :cascade do |t|
-    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -94,7 +87,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_21_091849) do
   end
 
   add_foreign_key "expenses", "types"
-  add_foreign_key "flocks", "statuses"
   add_foreign_key "flocks", "types"
   add_foreign_key "incomes", "types"
 end

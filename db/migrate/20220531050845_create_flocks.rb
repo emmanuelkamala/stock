@@ -10,7 +10,6 @@ class CreateFlocks < ActiveRecord::Migration[7.0]
       t.integer :current_stock
       t.integer :age
       t.text :notes
-      t.references :status, foreign_key: true
       t.references :type, foreign_key: true
 
       t.timestamps

@@ -22,7 +22,7 @@
             <th class="table-header">Initial stock</th>
             <th class="table-header">Died stock</th>
             <th class="table-header">Current stock</th>
-            <th class="table-header">Age</th>
+            <th class="table-header">Age in Weeks</th>
             <th class="table-header">Notes</th>
             <th class="table-header">Status</th>
             <th colspan="3" class="table-header"></th>
@@ -41,9 +41,9 @@
               <td class="table-data right"><%= flock.initial_stock %></td>
               <td class="table-data right"><%= flock.died_stock %></td>
               <td class="table-data right"><%= flock.current_stock %></td>
-              <td class="table-data"><%= flock.age %></td>
+              <td class="table-data"><%= flock.age_in_weeks %></td>
               <td class="table-data"><%= flock.notes %></td>
-              <td class="table-data"><%= flock.status.name %></td>
+              <td class="table-data"><%= flock.status %></td>
               <td class="table-data"><%= link_to 'Show', flock, class: 'btn-success' %></td>
               <td class="table-data"><%= link_to 'Edit', edit_flock_path(flock), class: 'btn-secondary' %></td>
               <td class="table-data"><%= link_to 'Destroy', flock, data: { turbo_method: "delete", turbo_confirm: 'Are you sure?' }, class: 'btn-danger' %></td>
