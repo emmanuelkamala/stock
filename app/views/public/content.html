@@ -1,0 +1,59 @@
+<div class="dashboard__content">
+  <div class="dashboard__content-boxes">
+    <div class="box">
+      <div class="left-side">
+        <div class="box-topic">Total Flock</div>
+        <div class="number"><%= Flock.sum(:initial_stock) %></div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="left-side">
+        <div class="box-topic">Total Income</div>
+        <div class="number"><%= number_to_currency(@income.batch.map(&:amount).sum, :unit => "Tshs. ", :delimiter => ",") %></div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="left-side">
+        <div class="box-topic">Total Expenses</div>
+        <div class="number"><%= number_to_currency(@expenses.map(&:total).sum, :unit => "Tshs. ", :delimiter => ",") %></div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="left-side">
+        <div class="box-topic">Loss</div>
+        <div class="number">
+          <span class="text-center p-3">
+            <% if @incomes.map(&:amount).sum < @expenses.map(&:total).sum %>
+              <span class="text-danger">
+                <strong><%= number_to_currency(@expenses.map(&:total).sum - @incomes.map(&:amount).sum, :unit => "Tshs. ")  %><strong>
+              </span>
+            <% else %>
+              <span class="text-success"><strong>0</strong></span>
+            <% end %>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="left-side">
+        <div class="box-topic">Profit</div>
+        <div class="number">
+          <span class="text-center p-3">
+            <% if @incomes.map(&:amount).sum > @expenses.map(&:total).sum %>
+              <span class="text-success">
+                <strong><%= number_to_currency(@incomes.map(&:amount).sum - @expenses.map(&:total).sum, :unit => "Tshs. ") %><strong>
+              </span>
+            <% else %>
+              <span class="text-danger"><strong> 0</strong></span>
+            <% end %>
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

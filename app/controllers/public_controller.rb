@@ -9,6 +9,7 @@ class PublicController < ApplicationController
     @incomes = Income.all
     @expenses = Expense.all
     @flocks = Flock.all
+    @batches = Batch.all
   end
 
   # def financial
