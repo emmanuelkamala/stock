@@ -10,9 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_22_144019) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_25_123602) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "batches", force: :cascade do |t|
+    t.integer "batch_no"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "expenses", force: :cascade do |t|
     t.date "date"
@@ -24,6 +30,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_22_144019) do
     t.bigint "type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "batch_id"
+    t.index ["batch_id"], name: "index_expenses_on_batch_id"
     t.index ["type_id"], name: "index_expenses_on_type_id"
   end
 
@@ -33,7 +41,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_22_144019) do
   end
 
   create_table "flocks", force: :cascade do |t|
-    t.integer "batch_no"
     t.datetime "date_in"
     t.datetime "retirement_date"
     t.string "source"
@@ -45,6 +52,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_22_144019) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status"
+    t.bigint "batch_id"
+    t.index ["batch_id"], name: "index_flocks_on_batch_id"
     t.index ["type_id"], name: "index_flocks_on_type_id"
   end
 
@@ -58,8 +67,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_22_144019) do
     t.bigint "type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "flock_id"
-    t.index ["flock_id"], name: "index_incomes_on_flock_id"
+    t.bigint "batch_id"
+    t.index ["batch_id"], name: "index_incomes_on_batch_id"
     t.index ["type_id"], name: "index_incomes_on_type_id"
   end
 
@@ -87,8 +96,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_22_144019) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "expenses", "batches"
   add_foreign_key "expenses", "types"
+  add_foreign_key "flocks", "batches"
   add_foreign_key "flocks", "types"
-  add_foreign_key "incomes", "flocks"
+  add_foreign_key "incomes", "batches"
   add_foreign_key "incomes", "types"
 end

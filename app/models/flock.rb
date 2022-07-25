@@ -10,6 +10,7 @@ class Flock < ApplicationRecord
   
   belongs_to :type
   has_many :incomes
+  has_many :expenses
 
   def current_stock
     initial_stock - died_stock

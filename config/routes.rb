@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :batches
   devise_scope :user do
     authenticated :user do
       root 'public#dashboard', as: :authenticated_root
