@@ -31,6 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_25_123602) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "batch_id"
+    t.bigint "flock_id"
     t.index ["batch_id"], name: "index_expenses_on_batch_id"
     t.index ["type_id"], name: "index_expenses_on_type_id"
   end
@@ -53,6 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_25_123602) do
     t.datetime "updated_at", null: false
     t.string "status"
     t.bigint "batch_id"
+    t.integer "batch_no"
     t.index ["batch_id"], name: "index_flocks_on_batch_id"
     t.index ["type_id"], name: "index_flocks_on_type_id"
   end
@@ -68,6 +70,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_25_123602) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "batch_id"
+    t.bigint "flock_id"
     t.index ["batch_id"], name: "index_incomes_on_batch_id"
     t.index ["type_id"], name: "index_incomes_on_type_id"
   end
