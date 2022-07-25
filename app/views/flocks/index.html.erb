@@ -33,8 +33,8 @@
           <% @flocks.each do |flock| %>
             <tr class="table-row">
               <td class="table-data"><%= flock.batch_no %></td>
-              <td class="table-data"><%= flock.date_in %></td>
-              <td class="table-data"><%= flock.retirement_date %></td>
+              <td class="table-data"><%= flock.date_in.strftime('%d %b %Y') %></td>
+              <td class="table-data"><%= flock.retirement_date.strftime('%d %b %Y') %></td>
               <td class="table-data"><%= flock.type.name %></td>
               <td class="table-data"><%= flock.source %></td>
               <td class="table-data"><%= flock.flock_stored %></td>

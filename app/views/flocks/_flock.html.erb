@@ -7,12 +7,12 @@
 
   <p class="show__items">
     <span class="show__title"><strong>Date in:</strong></span>
-    <span class="show__content"><%= flock.date_in %></span>
+    <span class="show__content"><%= flock.date_in.strftime('%d %b %Y') %></span>
   </p>
 
   <p class="show__items">
     <span class="show__title"><strong>Retirement date:</strong></span>
-    <span class="show__content"><%= flock.retirement_date %></span>
+    <span class="show__content"><%= flock.retirement_date.strftime('%d %b %Y') %></span>
   </p>
 
   <p class="show__items">
@@ -36,8 +36,8 @@
   </p>
 
   <p class="show__items">
-    <span class="show__title"><strong>Age:</strong></span>
-    <span class="show__content"><%= flock.age %></span>
+    <span class="show__title"><strong>Age in weeks:</strong></span>
+    <span class="show__content"><%= flock.age_in_weeks %></span>
   </p>
 
   <p class="show__items">

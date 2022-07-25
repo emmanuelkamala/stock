@@ -7,9 +7,7 @@ class Flock < ApplicationRecord
   validates :initial_stock, presence: true 
   validates :died_stock, presence: true 
   #validates :age, presence: true 
-  validates :status_id, presence: true 
-
-  belongs_to :status
+  
   belongs_to :type
 
   def current_stock
@@ -21,7 +19,7 @@ class Flock < ApplicationRecord
   end
 
   def age_in_weeks
-    Time.now - date_in
+    ((Time.now - date_in)/(86400 * 7)).round(2)
   end
 
 end
