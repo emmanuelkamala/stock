@@ -39,8 +39,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_22_144019) do
     t.string "source"
     t.string "flock_stored"
     t.integer "initial_stock"
-    t.integer "current_stock"
-    t.integer "age"
+    t.integer "died_stock"
     t.text "notes"
     t.bigint "type_id"
     t.datetime "created_at", null: false
@@ -50,7 +49,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_22_144019) do
   end
 
   create_table "incomes", force: :cascade do |t|
-    t.date "date"
+    t.datetime "date"
     t.string "category"
     t.integer "quantity"
     t.integer "unit_price"
@@ -59,6 +58,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_22_144019) do
     t.bigint "type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "flock_id"
+    t.index ["flock_id"], name: "index_incomes_on_flock_id"
     t.index ["type_id"], name: "index_incomes_on_type_id"
   end
 
@@ -88,5 +89,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_22_144019) do
 
   add_foreign_key "expenses", "types"
   add_foreign_key "flocks", "types"
+  add_foreign_key "incomes", "flocks"
   add_foreign_key "incomes", "types"
 end
