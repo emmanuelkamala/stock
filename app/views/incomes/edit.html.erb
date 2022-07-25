@@ -4,7 +4,7 @@
   <%= render "form", income: @income %>
   <br>
   <div>
-    <%= link_to "Show this income", @income %> |
-    <%= link_to "Back to incomes", incomes_path %>
+    <%= link_to "Show this income", @income, class: "btn-secondary" %> |
+    <%= link_to "Back to incomes", incomes_path, class: "btn-back" %>
   </div>
 </div>

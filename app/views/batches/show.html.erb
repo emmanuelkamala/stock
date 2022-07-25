@@ -1,10 +1,12 @@
-<p style="color: green"><%= notice %></p>
+<%= render 'layouts/sidebar' %>
 
-<%= render @batch %>
-
-<div>
-  <%= link_to "Edit this batch", edit_batch_path(@batch) %> |
-  <%= link_to "Back to batches", batches_path %>
-
-  <%= button_to "Destroy this batch", @batch, method: :delete %>
+<div class="content__details">
+  <p style="color: green"><%= notice %></p>
+  <%= render @batch %>
+  <div class="btn">
+    <%= link_to "Edit this batch", edit_batch_path(@batch), class: "btn-secondary" %> 
+    <%= link_to "Back to batches", batches_path, class: "btn-back" %>
+    <%= button_to "Destroy this batch", @batch, method: :delete, class: "btn-danger" %>
+  </div>
 </div>
+

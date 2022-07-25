@@ -1,7 +1,11 @@
-<div id="<%= dom_id batch %>">
-  <p>
-    <strong>Batch no:</strong>
-    <%= batch.batch_no %>
-  </p>
 
-</div>
+<%= turbo_frame_tag "type_#{@batch.id}" do %>
+  <div id="<%= dom_id batch %>" class="show">
+    <p class="show__items">
+      <span class="show__title"><strong>Batch no.</strong></span>
+      <span class="show__content"><%= batch.batch_no %></span>
+    </p>
+
+  </div>
+<% end %>
+

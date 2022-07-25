@@ -1,7 +1,12 @@
 <div id="<%= dom_id expense %>" class="show">
   <p class="show__items">
+    <span class="show__title"><strong>Batch no.:</strong></span>
+    <span class="show__content"><%= expense.batch.batch_no %></span>
+  </p>
+
+  <p class="show__items">
     <span class="show__title"><strong>Date:</strong></span>
-    <span class="show__content"><%= expense.date %></span>
+    <span class="show__content"><%= expense.date.strftime('%d %b %Y') %></span>
   </p>
 
   <p class="show__items">

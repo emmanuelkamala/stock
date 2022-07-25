@@ -38,7 +38,7 @@
 
   <div class="form__content">
     <%= form.label :batch_no, style: "display: block", class: "form__content-label" %>
-    <%= form.collection_select :batch_no, Flock.all, :id, :batch_no, {prompt: true}, class: 'form-control form__content-field' %>
+    <%= form.collection_select :batch_id, Batch.all, :id, :batch_no, {prompt: true}, class: 'form-control form__content-field' %>
   </div>  
 
   <div class="form__content">

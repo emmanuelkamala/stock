@@ -54,6 +54,6 @@ class FlocksController < ApplicationController
     end
 
     def flock_params
-      params.require(:flock).permit(:batch_no, :date_in, :retirement_date, :source, :flock_stored, :initial_stock, :died_stock, :age, :notes, :status, :type_id)
+      params.require(:flock).permit(:batch_id, :date_in, :retirement_date, :source, :flock_stored, :initial_stock, :died_stock, :age, :notes, :status, :type_id)
     end
 end

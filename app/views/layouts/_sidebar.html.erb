@@ -31,7 +31,13 @@
         <span class="sidebar__nav-links__list">Expense</span>
       <% end %>
     </li>
-     <li>
+    <li>
+      <%= link_to(batches_path, remote: true) do %>
+        <i class="fa-solid fa-toolbox"></i>
+        <span class="sidebar__nav-links__list">Batch</span>
+      <% end %>
+    </li>
+    <li>
       <%= link_to(types_path, remote: true) do %>
         <i class="fa-solid fa-toolbox"></i>
         <span class="sidebar__nav-links__list">Type</span>

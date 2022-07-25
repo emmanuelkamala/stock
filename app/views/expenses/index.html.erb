@@ -11,6 +11,7 @@
     <table class="table-striped">
       <thead>
         <tr>
+          <th class="table-header type">Batch no.</th>
           <th class="table-header">Date</th>
           <th class="table-header">Category</th>
           <th class="table-header">Quantity</th>
@@ -25,16 +26,17 @@
       <tbody>
         <% @expenses.each do |expense| %>
           <tr class="table-row">
-            <td class="table-data"><%= expense.date %></td>
+            <td class="table-data"><%= expense.batch.batch_no %></td>
+            <td class="table-data"><%= expense.date.strftime('%d %b %Y') %></td>
             <td class="table-data"><%= expense.category %></td>
             <td class="table-data right"><%= expense.quantity %></td>
             <td class="table-data right"><%= expense.unit_price %></td>
             <td class="table-data right"><%= number_to_currency(expense.total, :unit => "") %></td>
             <td class="table-data"><%= expense.description %></td>
             <td class="table-data"><%= expense.type.name %></td>
-            <td><%= link_to 'Show', expense, class: 'btn-success' %></td>
-            <td><%= link_to 'Edit', edit_expense_path(expense), class: 'btn-secondary' %></td>
-            <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-danger' %></td>
+            <td class="table-data"><%= link_to 'Show', expense, class: 'btn-success' %></td>
+            <td class="table-data"><%= link_to 'Edit', edit_expense_path(expense), class: 'btn-secondary' %></td>
+            <td class="table-data"><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-danger' %></td>
           </tr>
         <% end %>
       </tbody>

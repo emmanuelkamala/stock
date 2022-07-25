@@ -32,7 +32,7 @@
         <tbody>
           <% @flocks.each do |flock| %>
             <tr class="table-row">
-              <td class="table-data"><%= flock.batch_no %></td>
+              <td class="table-data"><%= flock.batch.batch_no %></td>
               <td class="table-data"><%= flock.date_in.strftime('%d %b %Y') %></td>
               <td class="table-data"><%= flock.retirement_date.strftime('%d %b %Y') %></td>
               <td class="table-data"><%= flock.type.name %></td>

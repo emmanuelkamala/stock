@@ -1,9 +1,14 @@
-<h1>New batch</h1>
+<%= render 'layouts/sidebar' %>
 
-<%= render "form", batch: @batch %>
-
-<br>
-
-<div>
-  <%= link_to "Back to batches", batches_path %>
+<div class="content__details">
+  <div class="resource-title">
+    <h1>Add Batch</h1>
+    <div>
+      <%= link_to "Back", batches_path, class: "btn-back" %>
+    </div>
+  </div>
+  <%= render "form", batch: @batch %>
+  <br>
+  
 </div>
+

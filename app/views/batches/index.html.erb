@@ -1,14 +1,34 @@
-<p style="color: green"><%= notice %></p>
+<%= render 'layouts/sidebar' %>
 
-<h1>Batches</h1>
+<div class="content__details">
 
-<div id="batches">
-  <% @batches.each do |batch| %>
-    <%= render batch %>
-    <p>
-      <%= link_to "Show this batch", batch %>
-    </p>
-  <% end %>
+  <p style="color: green"><%= notice %></p>
+  <div class="resource-title">
+    <h1>Batches</h1>
+      <%= link_to "Add Batch", new_batch_path, class: "btn-success" %>
+  </div>
+
+
+  <div class="table-responsive">
+    <table class="table-striped">
+      <thead>
+        <tr>
+          <th class="table-header" scope="col">Number</th>
+          <th colspan="3" class="table-header"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @batches.each do |batch| %>
+          <tr class="table-row">
+            <td class="table-data"><%= batch.batch_no %></td>
+            <td class="table-data"><%= link_to 'Show', batch, class: 'btn-success' %></td>
+            <td class="table-data"><%= link_to 'Edit', edit_batch_path(batch), class: 'btn-secondary' %></td>
+            <td class="table-data"><%= link_to 'Destroy', batch, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-danger' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
 </div>
-
-<%= link_to "New batch", new_batch_path %>

@@ -1,10 +1,14 @@
-<h1>Editing batch</h1>
+<%= render 'layouts/sidebar' %>
 
-<%= render "form", batch: @batch %>
-
-<br>
-
-<div>
-  <%= link_to "Show this batch", @batch %> |
-  <%= link_to "Back to batches", batches_path %>
+<div class="content__details">
+  <h1>Editing Batch</h1>
+  <%= turbo_frame_tag "batch_#{@batch.id}" do %>
+    <%= render "form", batch: @batch %>
+  <% end %>
+  <br>
+  <div>
+    <%= link_to "Show this batch", @batch, class: "btn-secondary" %> |
+    <%= link_to "Back to batches", batches_path, class: "btn-back" %>
+  </div>
 </div>
+

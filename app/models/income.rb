@@ -1,6 +1,6 @@
 class Income < ApplicationRecord
   belongs_to :type
-  belongs_to :flock, class_name: 'Flock', foreign_key: :batch_no
+  belongs_to :batch
 
   def amount
     unit_price.to_i * quantity.to_i

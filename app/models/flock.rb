@@ -1,5 +1,5 @@
 class Flock < ApplicationRecord
-  validates :batch_no, presence: true
+  validates :batch_id, presence: true
   validates :retirement_date, presence: true
   validates :date_in, presence: true
   validates :source, presence: true 
@@ -9,8 +9,7 @@ class Flock < ApplicationRecord
   #validates :age, presence: true 
   
   belongs_to :type
-  has_many :incomes
-  has_many :expenses
+  belongs_to :batch
 
   def current_stock
     initial_stock - died_stock
