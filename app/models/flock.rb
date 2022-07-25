@@ -9,6 +9,7 @@ class Flock < ApplicationRecord
   #validates :age, presence: true 
   
   belongs_to :type
+  has_many :incomes
 
   def current_stock
     initial_stock - died_stock
