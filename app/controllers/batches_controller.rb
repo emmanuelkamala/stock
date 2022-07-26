@@ -9,7 +9,7 @@ class BatchesController < ApplicationController
 
   # GET /batches/1 or /batches/1.json
   def show
-    @title = "Batch #{@batch.id}"
+    @title = "Batch number #{@batch.batch_no}"
   end
 
   def show_batch

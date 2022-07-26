@@ -2,7 +2,7 @@ class ExpensesController < ApplicationController
   before_action :set_expense, only: %i[ show edit update destroy ]
 
   def index
-    @expenses = Expense.all
+    @expenses = Expense.order(:batch_id).page(params[:page])
     @title = 'All Expenses'
   end
 
