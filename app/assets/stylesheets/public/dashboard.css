@@ -33,11 +33,13 @@ h2 {
 .box-topic-profit {
   color: #04AA6D;
   font-weight: bold;
+  font-size: 1rem;
 }
 
 .box-topic-loss {
   color: rgb(192, 10, 10);
   font-weight: bold;
+  font-size: 1rem;
 }
 
 .number {
