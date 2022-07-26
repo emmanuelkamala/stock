@@ -46,9 +46,9 @@
       <strong>Total Expenses</strong> = <%= number_to_currency(@expenses.map(&:total).sum, :unit => "Tshs. ", :delimiter => ",") %>
     </div>
 
-    <%= paginate @expenses,  theme: 'bootstrap-5',
-    pagination_class: "pagination-sm flex-wrap justify-content-center",
-    nav_class: "d-inline-block" %>
+    <div class="paginate-bottom">
+       <%= paginate @expenses %>
+    </div>
   </div>
 
 </div>

@@ -1,4 +1,6 @@
 class Flock < ApplicationRecord
+  paginates_per 10
+  
   validates :batch_id, presence: true
   validates :retirement_date, presence: true
   validates :date_in, presence: true
