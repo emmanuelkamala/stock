@@ -2,12 +2,45 @@
 
 <div class="content__details">
   <p style="color: green"><%= notice %></p>
-  <%= render @batch %>
-  <div class="btn">
-    <%= link_to "Edit this batch", edit_batch_path(@batch), class: "btn-secondary" %> 
-    <%= link_to "Back to batches", batches_path, class: "btn-back" %>
-    <%= button_to "Destroy this batch", @batch, method: :delete, class: "btn-danger" %>
+  <div class="resource-content-title">
+    <div>
+      <%= render @batch %>
+      <div class="btn">
+        <%= link_to "Edit this batch", edit_batch_path(@batch), class: "btn-secondary" %> 
+        <%= link_to "Back to batches", batches_path, class: "btn-back" %>
+        <%= button_to "Destroy this batch", @batch, method: :delete, class: "btn-danger" %>
+      </div>
+    </div>
+    <div class="box">
+      <div class="left-side">
+        <div class="box-topic">Profit</div>
+        <div class="number">
+          <% if @batch.incomes.map(&:amount).sum > @batch.expenses.map(&:total).sum %>
+          <span class="text-success">
+            <strong><%= number_to_currency(@batch.incomes.map(&:amount).sum - @batch.expenses.map(&:total).sum, :unit => "Tshs. ") %><strong>
+          </span>
+          <% else %>
+            <span class="text-danger"><strong> 0</strong></span>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="right-side">
+        <div class="box-topic">Loss</div>
+        <div class="number">
+          <% if @batch.incomes.map(&:amount).sum < @batch.expenses.map(&:total).sum %>
+          <span class="text-danger">
+            <strong><%= number_to_currency(@batch.expenses.map(&:total).sum - @batch.incomes.map(&:amount).sum, :unit => "Tshs. ")  %><strong>
+          </span>
+          <% else %>
+            <span class="text-success"><strong>0</strong></span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
   </div>
+
 
   <%= render 'batches/batch_summary' %>
 
