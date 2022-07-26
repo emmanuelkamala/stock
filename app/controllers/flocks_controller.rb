@@ -2,7 +2,7 @@ class FlocksController < ApplicationController
   before_action :set_flock, only: %i[ show edit update destroy ]
 
   def index
-    @flocks = Flock.all
+    @flocks = Flock.order(:batch_id).page(params[:page])
     @title = 'All Flocks'
   end
 

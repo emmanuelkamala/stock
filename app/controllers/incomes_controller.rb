@@ -2,7 +2,7 @@ class IncomesController < ApplicationController
   before_action :set_income, only: %i[ show edit update destroy ]
 
   def index
-    @incomes = Income.all
+    @incomes = Income.order(:batch_id).page(params[:page])
     @title = 'Incomes'
 
     respond_to do |format|
