@@ -13,27 +13,27 @@
     </div>
     <div class="box">
       <div class="left-side">
-        <div class="box-topic">Profit from this batch</div>
+        <div class="box-topic box-topic-profit">Profit from this batch</div>
         <div class="number">
           <% if @batch.incomes.map(&:amount).sum > @batch.expenses.map(&:total).sum %>
           <span class="text-success">
-            <strong><%= number_to_currency(@batch.incomes.map(&:amount).sum - @batch.expenses.map(&:total).sum, :unit => "Tshs. ") %><strong>
+            <strong class="value-color"><%= number_to_currency(@batch.incomes.map(&:amount).sum - @batch.expenses.map(&:total).sum, :unit => "Tshs. ") %><strong>
           </span>
           <% else %>
-            <span class="text-danger"><strong> 0</strong></span>
+            <span class="text-danger"><strong class="value-color"> 0</strong></span>
           <% end %>
         </div>
       </div>
 
-      <div class="right-side">
-        <div class="box-topic">Loss from this batch</div>
+      <div class="right-side top">
+        <div class="box-topic box-topic-loss">Loss from this batch</div>
         <div class="number">
           <% if @batch.incomes.map(&:amount).sum < @batch.expenses.map(&:total).sum %>
           <span class="text-danger">
-            <strong><%= number_to_currency(@batch.expenses.map(&:total).sum - @batch.incomes.map(&:amount).sum, :unit => "Tshs. ")  %><strong>
+            <strong class="value-color"><%= number_to_currency(@batch.expenses.map(&:total).sum - @batch.incomes.map(&:amount).sum, :unit => "Tshs. ")  %><strong>
           </span>
           <% else %>
-            <span class="text-success"><strong>0</strong></span>
+            <span class="text-success"><strong class="value-color">0</strong></span>
           <% end %>
         </div>
       </div>

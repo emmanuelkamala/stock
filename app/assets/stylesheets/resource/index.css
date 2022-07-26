@@ -124,6 +124,13 @@
   color: rgb(10, 10, 133);
 }
 
+.top {
+  padding-top: 10px;
+}
+
+.value-color {
+  color: rgb(87, 85, 85);
+}
 
 /* Responsiveness */
 

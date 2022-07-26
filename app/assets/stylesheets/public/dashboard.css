@@ -30,6 +30,16 @@ h2 {
   font-weight: 500;
 }
 
+.box-topic-profit {
+  color: #04AA6D;
+  font-weight: bold;
+}
+
+.box-topic-loss {
+  color: rgb(192, 10, 10);
+  font-weight: bold;
+}
+
 .number {
   font-size: 20px;
   font-weight: 500;
