@@ -2,8 +2,10 @@
 
 <div class="content__details">
  <p style="color: green"><%= notice %></p>
-  <h2>Summary</h2>
+  <h1 class="top">Summary</h1>
+  <hr />
 
+  <h2>Summary by Batches</h2>
   <div class="table-responsive">
     <table class="table-striped">
       <thead>
@@ -49,5 +51,7 @@
       </tbody>
     </table>
   </div>
+
+  <%= render 'layouts/stats' %>
 
 </div>

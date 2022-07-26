@@ -43,7 +43,7 @@
     </table>
 
     <div class="paginate-bottom">
-      <strong>Total Expenses</strong> = <%= number_to_currency(@expenses.map(&:total).sum, :unit => "Tshs. ", :delimiter => ",") %>
+      <strong>Total Expense per page</strong> = <%= number_to_currency(@expenses.map(&:total).sum, :unit => "Tshs. ", :delimiter => ",") %>
     </div>
 
     <div class="paginate-bottom">
