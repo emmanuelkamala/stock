@@ -1,0 +1,125 @@
+<h3 class="headings">All Flocks From This Batch</h3>
+
+  <div class="table-responsive">
+    <table class="table-striped">
+      <thead>
+        <tr>
+          <th class="table-header">Batch No.</th>
+          <th class="table-header">Date in</th>
+          <th class="table-header">Retirement date</th>
+          <th class="table-header">Type</th>
+          <th class="table-header">Source</th>
+          <th class="table-header">Stored</th>
+          <th class="table-header">Initial stock</th>
+          <th class="table-header">Died stock</th>
+          <th class="table-header">Current stock</th>
+          <th class="table-header">Age in Weeks</th>
+          <th class="table-header">Notes</th>
+          <th class="table-header">Status</th>
+          <th colspan="3" class="table-header"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @batch.flocks.each do |flock| %>
+          <tr class="table-row">
+            <td class="table-data"><%= flock.batch.batch_no %></td>
+            <td class="table-data"><%= flock.date_in.strftime('%d %b %Y') %></td>
+            <td class="table-data"><%= flock.retirement_date.strftime('%d %b %Y') %></td>
+            <td class="table-data"><%= flock.type.name %></td>
+            <td class="table-data"><%= flock.source %></td>
+            <td class="table-data"><%= flock.flock_stored %></td>
+            <td class="table-data right"><%= flock.initial_stock %></td>
+            <td class="table-data right"><%= flock.died_stock %></td>
+            <td class="table-data right"><%= flock.current_stock %></td>
+            <td class="table-data"><%= flock.age_in_weeks %></td>
+            <td class="table-data"><%= flock.notes %></td>
+            <td class="table-data"><%= flock.status %></td>
+            <td class="table-data"><%= link_to 'Show', flock, class: 'btn-success' %></td>
+            <td class="table-data"><%= link_to 'Edit', edit_flock_path(flock), class: 'btn-secondary' %></td>
+            <td class="table-data"><%= link_to 'Destroy', flock, data: { turbo_method: "delete", turbo_confirm: 'Are you sure?' }, class: 'btn-danger' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+
+  <h3 class="headings">All Income From This Batch</h3>
+
+  <div class="table-responsive">
+  <table class="table-striped">
+    <thead>
+      <tr>
+        <th class="table-header type">Batch no.</th>
+        <th class="table-header">Date</th>
+        <th class="table-header">Category</th>
+        <th class="table-header">Quantity</th>
+        <th class="table-header">Unit Price</th>
+        <th class="table-header total">Total Income</th>
+        <th class="table-header">Description</th>
+        <th class="table-header type">Flock Type</th>
+        <th colspan="3" class="table-header"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @batch.incomes.each do |income| %>
+        <tr class="table-row">
+          <td class="table-data"><%= income.batch.batch_no %></td>
+          <td class="table-data"><%= income.date.strftime('%d %b %Y') %></td>
+          <td class="table-data"><%= income.category %></td>
+          <td class="table-data right"><%= income.quantity %></td>
+          <td class="table-data right"><%= income.unit_price %></td>
+          <td class="table-data right"><%= number_to_currency(income.amount, :unit => "") %></td>
+          <td class="table-data"><%= income.description %></td>
+          <td class="table-data"><%= income.type.name %></td>
+          <td class="table-data"><%= link_to 'Show', income, class: 'btn-success' %></td>
+          <td class="table-data"><%= link_to 'Edit', edit_income_path(income), class: 'btn-secondary' %></td>
+          <td class="table-data"><%= button_to 'Destroy', income, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-danger' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <strong>Total Income</strong> = <%= number_to_currency(@batch.incomes.map(&:amount).sum, :unit => "Tshs. ", :delimiter => ",") %>
+</div>
+
+<h3 class="headings">All Expenses From This Batch</h3>
+<div class="table-responsive">
+    <table class="table-striped">
+      <thead>
+        <tr>
+          <th class="table-header type">Batch no.</th>
+          <th class="table-header">Date</th>
+          <th class="table-header">Category</th>
+          <th class="table-header">Quantity</th>
+          <th class="table-header">Unit Price</th>
+          <th class="table-header">Total Expense</th>
+          <th class="table-header">Description</th>
+          <th class="table-header">Flock Type</th>
+          <th colspan="3" class="table-header"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @batch.expenses.each do |expense| %>
+          <tr class="table-row">
+            <td class="table-data"><%= expense.batch.batch_no %></td>
+            <td class="table-data"><%= expense.date.strftime('%d %b %Y') %></td>
+            <td class="table-data"><%= expense.category %></td>
+            <td class="table-data right"><%= expense.quantity %></td>
+            <td class="table-data right"><%= expense.unit_price %></td>
+            <td class="table-data right"><%= number_to_currency(expense.total, :unit => "") %></td>
+            <td class="table-data"><%= expense.description %></td>
+            <td class="table-data"><%= expense.type.name %></td>
+            <td class="table-data"><%= link_to 'Show', expense, class: 'btn-success' %></td>
+            <td class="table-data"><%= link_to 'Edit', edit_expense_path(expense), class: 'btn-secondary' %></td>
+            <td class="table-data"><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-danger' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <strong>Total Expenses</strong> = <%= number_to_currency(@batch.expenses.map(&:total).sum, :unit => "Tshs. ", :delimiter => ",") %>
+  </div>

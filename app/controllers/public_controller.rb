@@ -12,6 +12,10 @@ class PublicController < ApplicationController
     @batches = Batch.all
   end
 
+  def show 
+    
+  end
+
   # def financial
   #   @title = 'Financial'
   #  # @incomes = Income.created_between(1.year.ago, Time.now)

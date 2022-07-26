@@ -1,22 +1,30 @@
 class BatchesController < ApplicationController
-  before_action :set_batch, only: %i[ show edit update destroy ]
+  before_action :set_batch, only: %i[ show edit update destroy show_batch ]
 
   # GET /batches or /batches.json
   def index
     @batches = Batch.all
+    @title = 'All Batches'
   end
 
   # GET /batches/1 or /batches/1.json
   def show
+    @title = "Batch #{@batch.id}"
+  end
+
+  def show_batch
+
   end
 
   # GET /batches/new
   def new
     @batch = Batch.new
+    @title = "New Batch"
   end
 
   # GET /batches/1/edit
   def edit
+    @title = "Edit Batch #{@batch.id}"
   end
 
   # POST /batches or /batches.json

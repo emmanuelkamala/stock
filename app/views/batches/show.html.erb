@@ -8,5 +8,8 @@
     <%= link_to "Back to batches", batches_path, class: "btn-back" %>
     <%= button_to "Destroy this batch", @batch, method: :delete, class: "btn-danger" %>
   </div>
+
+  <%= render 'batches/batch_summary' %>
+
 </div>
 

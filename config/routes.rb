@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :batches
   devise_scope :user do
     authenticated :user do
       root 'public#dashboard', as: :authenticated_root
@@ -15,10 +14,12 @@ Rails.application.routes.draw do
   get '/report', to: 'public#report'
   get '/income/report', to: 'incomes#report'
   get '/flock/report', to: 'flocks#report'
+
   devise_for :users
   resources :incomes
   resources :flocks
   resources :expenses
   resources :statuses
   resources :types
+  resources :batches
 end

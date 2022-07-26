@@ -111,3 +111,8 @@
   align-items: center;
   margin: 20px 0;
 }
+
+.headings {
+  padding: 40px 0 20px;
+  color: rgb(10, 10, 133);
+}
