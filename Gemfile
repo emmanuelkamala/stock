@@ -19,6 +19,8 @@ gem "font-awesome-rails", "~> 4.7"
 gem "chartkick", "~> 4.1"
 gem "groupdate", "~> 6.1"
 gem "kaminari"
+gem 'bootstrap5-kaminari-views'
+
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]

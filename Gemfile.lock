@@ -72,6 +72,9 @@ GEM
     bindex (0.8.1)
     bootsnap (1.12.0)
       msgpack (~> 1.2)
+    bootstrap5-kaminari-views (0.0.1)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
     builder (3.2.4)
     capybara (3.37.1)
       addressable
@@ -246,6 +249,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bootstrap5-kaminari-views
   capybara
   chartkick (~> 4.1)
   debug
