@@ -13,7 +13,7 @@
     </div>
     <div class="box">
       <div class="left-side">
-        <div class="box-topic">Profit</div>
+        <div class="box-topic">Profit from this batch</div>
         <div class="number">
           <% if @batch.incomes.map(&:amount).sum > @batch.expenses.map(&:total).sum %>
           <span class="text-success">
@@ -26,7 +26,7 @@
       </div>
 
       <div class="right-side">
-        <div class="box-topic">Loss</div>
+        <div class="box-topic">Loss from this batch</div>
         <div class="number">
           <% if @batch.incomes.map(&:amount).sum < @batch.expenses.map(&:total).sum %>
           <span class="text-danger">
