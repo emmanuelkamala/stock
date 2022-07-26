@@ -128,6 +128,10 @@
   padding-top: 10px;
 }
 
+.paginate-bottom {
+  margin-top: 10px;
+}
+
 .value-color {
   color: rgb(87, 85, 85);
 }
