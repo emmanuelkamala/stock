@@ -3,28 +3,28 @@
   <div class="dashboard__content-boxes">
     <div class="box">
       <div class="left-side">
-        <div class="box-topic">Total Current Flock</div>
+        <div class="box-topic box-topic-profit">Total Current Flock</div>
         <div class="number"><%= @flocks.map(&:current_stock).sum %></div>
       </div>
     </div>
 
     <div class="box">
       <div class="left-side">
-        <div class="box-topic">Total Combined Income</div>
+        <div class="box-topic box-topic-profit">Total Combined Income</div>
         <div class="number"><%= number_to_currency(@incomes.map(&:amount).sum, :unit => "Tshs. ", :delimiter => ",") %></div>
       </div>
     </div>
 
     <div class="box">
       <div class="left-side">
-        <div class="box-topic">Total Combined Expenses</div>
+        <div class="box-topic box-topic-profit">Total Combined Expenses</div>
         <div class="number"><%= number_to_currency(@expenses.map(&:total).sum, :unit => "Tshs. ", :delimiter => ",") %></div>
       </div>
     </div>
 
     <div class="box">
       <div class="left-side">
-        <div class="box-topic">Total Loss</div>
+        <div class="box-topic box-topic-loss">Total Loss</div>
         <div class="number">
           <span class="text-center p-3">
             <% if @incomes.map(&:amount).sum < @expenses.map(&:total).sum %>
@@ -41,7 +41,7 @@
 
     <div class="box">
       <div class="left-side">
-        <div class="box-topic">Total Profit</div>
+        <div class="box-topic box-topic-profit">Total Profit</div>
         <div class="number">
           <span class="text-center p-3">
             <% if @incomes.map(&:amount).sum > @expenses.map(&:total).sum %>

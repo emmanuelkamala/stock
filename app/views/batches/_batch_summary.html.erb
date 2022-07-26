@@ -81,8 +81,9 @@
       <% end %>
     </tbody>
   </table>
-
-  <strong>Total Income</strong> = <%= number_to_currency(@batch.incomes.map(&:amount).sum, :unit => "Tshs. ", :delimiter => ",") %>
+  <div class="paginate-bottom">
+    <strong>Total Income</strong> = <%= number_to_currency(@batch.incomes.map(&:amount).sum, :unit => "Tshs. ", :delimiter => ",") %>
+  </div>
 </div>
 
 <h3 class="headings">All Expenses From This Batch</h3>
@@ -120,6 +121,8 @@
         <% end %>
       </tbody>
     </table>
-
-    <strong>Total Expenses</strong> = <%= number_to_currency(@batch.expenses.map(&:total).sum, :unit => "Tshs. ", :delimiter => ",") %>
+    
+    <div class="paginate-bottom">
+      <strong>Total Expenses</strong> = <%= number_to_currency(@batch.expenses.map(&:total).sum, :unit => "Tshs. ", :delimiter => ",") %>
+    </div>
   </div>
