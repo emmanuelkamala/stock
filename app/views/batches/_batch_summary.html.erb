@@ -9,7 +9,6 @@
           <th class="table-header">Retirement date</th>
           <th class="table-header">Type</th>
           <th class="table-header">Source</th>
-          <th class="table-header">Stored</th>
           <th class="table-header">Initial stock</th>
           <th class="table-header">Died stock</th>
           <th class="table-header">Current stock</th>
@@ -28,7 +27,6 @@
             <td class="table-data"><%= flock.retirement_date.strftime('%d %b %Y') %></td>
             <td class="table-data"><%= flock.type.name %></td>
             <td class="table-data"><%= flock.source %></td>
-            <td class="table-data"><%= flock.flock_stored %></td>
             <td class="table-data right"><%= flock.initial_stock %></td>
             <td class="table-data right"><%= flock.died_stock %></td>
             <td class="table-data right"><%= flock.current_stock %></td>

@@ -5,7 +5,6 @@ class Flock < ApplicationRecord
   validates :retirement_date, presence: true
   validates :date_in, presence: true
   validates :source, presence: true 
-  validates :flock_stored, presence: true 
   validates :initial_stock, presence: true 
   validates :died_stock, presence: true 
   
