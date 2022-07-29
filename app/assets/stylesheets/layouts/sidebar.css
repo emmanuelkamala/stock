@@ -8,10 +8,16 @@
 
 .active {
   width: 60px;
+  /* display: none;
+  color: #f8f5f5; */
+}
+
+.not_active {
+  display: none;
 }
 
 .sidebar__logo {
-  height: 80px;
+  height: 80px; 
   width: 100%;
   color: #fff;
   display: flex;
@@ -99,7 +105,7 @@
   left: 60px;
 }
 
-.active ~ .sidebar__nav-links li a {
+.active ~ .sidebar__nav-links__list {
   display: none;
 }
 
