@@ -8,12 +8,6 @@
 
 .active {
   width: 60px;
-  /* display: none;
-  color: #f8f5f5; */
-}
-
-.not_active {
-  display: none;
 }
 
 .sidebar__logo {
