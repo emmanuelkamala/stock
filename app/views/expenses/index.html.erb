@@ -33,7 +33,7 @@
             <td class="table-data right"><%= expense.unit_price %></td>
             <td class="table-data right"><%= number_to_currency(expense.total, :unit => "") %></td>
             <td class="table-data"><%= expense.description %></td>
-            <td class="table-data"><%= expense.type.name %></td>
+            <td class="table-data"><%= expense.batch.flock_type %></td>
             <td class="table-data"><%= link_to 'Show', expense, class: 'btn-success' %></td>
             <td class="table-data"><%= link_to 'Edit', edit_expense_path(expense), class: 'btn-secondary' %></td>
             <td class="table-data"><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-danger' %></td>
