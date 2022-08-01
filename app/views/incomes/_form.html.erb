@@ -41,11 +41,6 @@
     <%= form.collection_select :batch_id, Batch.all, :id, :batch_no, {prompt: true}, class: 'form-control form__content-field' %>
   </div>  
 
-  <div class="form__content">
-    <%= form.label :flock_type, style: "display: block", class: "form__content-label" %>
-    <%= form.text_field :flock_type, class: "form__content-field" %>
-  </div>
-
   <div class="form__submit">
     <%= form.submit class: "btn-success" %>
   </div>
