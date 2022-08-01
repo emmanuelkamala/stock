@@ -8,7 +8,6 @@ class Flock < ApplicationRecord
   validates :initial_stock, presence: true 
   validates :died_stock, presence: true 
   
-  belongs_to :type
   belongs_to :batch
 
   def current_stock

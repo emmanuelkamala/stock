@@ -25,7 +25,7 @@
             <td class="table-data"><%= flock.batch.batch_no %></td>
             <td class="table-data"><%= flock.date_in.strftime('%d %b %Y') %></td>
             <td class="table-data"><%= flock.retirement_date.strftime('%d %b %Y') %></td>
-            <td class="table-data"><%= flock.type.name %></td>
+            <td class="table-data"><%= flock.batch.flock_type %></td>
             <td class="table-data"><%= flock.source %></td>
             <td class="table-data right"><%= flock.initial_stock %></td>
             <td class="table-data right"><%= flock.died_stock %></td>
@@ -71,7 +71,7 @@
           <td class="table-data right"><%= income.unit_price %></td>
           <td class="table-data right"><%= number_to_currency(income.amount, :unit => "") %></td>
           <td class="table-data"><%= income.description %></td>
-          <td class="table-data"><%= income.type.name %></td>
+          <td class="table-data"><%= income.batch.flock_type %></td>
           <td class="table-data"><%= link_to 'Show', income, class: 'btn-success' %></td>
           <td class="table-data"><%= link_to 'Edit', edit_income_path(income), class: 'btn-secondary' %></td>
           <td class="table-data"><%= button_to 'Destroy', income, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-danger' %></td>
@@ -111,7 +111,7 @@
             <td class="table-data right"><%= expense.unit_price %></td>
             <td class="table-data right"><%= number_to_currency(expense.total, :unit => "") %></td>
             <td class="table-data"><%= expense.description %></td>
-            <td class="table-data"><%= expense.type.name %></td>
+            <td class="table-data"><%= expense.batch.flock_type %></td>
             <td class="table-data"><%= link_to 'Show', expense, class: 'btn-success' %></td>
             <td class="table-data"><%= link_to 'Edit', edit_expense_path(expense), class: 'btn-secondary' %></td>
             <td class="table-data"><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-danger' %></td>

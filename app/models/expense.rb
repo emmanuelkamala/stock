@@ -1,7 +1,6 @@
 class Expense < ApplicationRecord
   paginates_per 10
 
-  belongs_to :type
   belongs_to :batch
 
   def total

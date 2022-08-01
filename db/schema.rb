@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_29_181021) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_01_112854) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_29_181021) do
     t.integer "batch_no"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "flock_type"
   end
 
   create_table "expenses", force: :cascade do |t|
@@ -27,13 +28,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_29_181021) do
     t.integer "unit_price"
     t.integer "total_amount"
     t.text "description"
-    t.bigint "type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "batch_id"
     t.bigint "flock_id"
     t.index ["batch_id"], name: "index_expenses_on_batch_id"
-    t.index ["type_id"], name: "index_expenses_on_type_id"
   end
 
   create_table "financial_searches", force: :cascade do |t|
@@ -48,14 +47,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_29_181021) do
     t.integer "initial_stock"
     t.integer "died_stock"
     t.text "notes"
-    t.bigint "type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status"
     t.bigint "batch_id"
     t.integer "batch_no"
     t.index ["batch_id"], name: "index_flocks_on_batch_id"
-    t.index ["type_id"], name: "index_flocks_on_type_id"
   end
 
   create_table "incomes", force: :cascade do |t|
@@ -65,13 +62,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_29_181021) do
     t.integer "unit_price"
     t.integer "total_amount"
     t.text "description"
-    t.bigint "type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "batch_id"
     t.bigint "flock_id"
     t.index ["batch_id"], name: "index_incomes_on_batch_id"
-    t.index ["type_id"], name: "index_incomes_on_type_id"
   end
 
   create_table "report_searches", force: :cascade do |t|
@@ -80,12 +75,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_29_181021) do
   end
 
   create_table "statuses", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "types", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -105,9 +94,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_29_181021) do
   end
 
   add_foreign_key "expenses", "batches"
-  add_foreign_key "expenses", "types"
   add_foreign_key "flocks", "batches"
-  add_foreign_key "flocks", "types"
   add_foreign_key "incomes", "batches"
-  add_foreign_key "incomes", "types"
 end

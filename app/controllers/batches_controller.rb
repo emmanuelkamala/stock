@@ -73,6 +73,6 @@ class BatchesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def batch_params
-      params.require(:batch).permit(:batch_no)
+      params.require(:batch).permit(:batch_no, :flock_type)
     end
 end
