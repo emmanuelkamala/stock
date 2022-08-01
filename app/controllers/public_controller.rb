@@ -15,16 +15,4 @@ class PublicController < ApplicationController
   def show 
     
   end
-
-  # def financial
-  #   @title = 'Financial'
-  #  # @incomes = Income.created_between(1.year.ago, Time.now)
-  #  @search = ReportSearch.new(params[:search])
-  #  @incomes = @search.scope
-  # end
-
-  # def production
-  #   @title = 'Production'
-  #   @flocks = Flock.all
-  # end
 end

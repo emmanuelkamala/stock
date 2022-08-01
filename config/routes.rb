@@ -20,6 +20,5 @@ Rails.application.routes.draw do
   resources :flocks
   resources :expenses
   resources :statuses
-  resources :types
   resources :batches
 end
