@@ -53,6 +53,12 @@
   transition: all 0.4s ease;
 }
 
+.sidebar__note {
+  font-size: 0.8rem;
+  padding-left: 0.4rem;
+  color: rgb(243, 86, 86);
+}
+
 .logout {
   display: flex;
   align-items: center;
