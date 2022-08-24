@@ -33,11 +33,9 @@ class BatchesController < ApplicationController
 
     respond_to do |format|
       if @batch.save
-        format.html { redirect_to batch_url(@batch), notice: "Batch was successfully created." }
-        format.json { render :show, status: :created, location: @batch }
+        redirect_to batch_url(@batch), notice: "Batch was successfully created."
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @batch.errors, status: :unprocessable_entity }
+        render :new, status: :unprocessable_entity
       end
     end
   end
@@ -46,11 +44,9 @@ class BatchesController < ApplicationController
   def update
     respond_to do |format|
       if @batch.update(batch_params)
-        format.html { redirect_to batch_url(@batch), notice: "Batch was successfully updated." }
-        format.json { render :show, status: :ok, location: @batch }
+        redirect_to batch_url(@batch), notice: "Batch was successfully updated."
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @batch.errors, status: :unprocessable_entity }
+        render :edit, status: :unprocessable_entity
       end
     end
   end
@@ -59,10 +55,7 @@ class BatchesController < ApplicationController
   def destroy
     @batch.destroy
 
-    respond_to do |format|
-      format.html { redirect_to batches_url, notice: "Batch was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to batches_url, notice: "Batch was successfully destroyed." 
   end
 
   private

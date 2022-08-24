@@ -114,9 +114,6 @@ GEM
     io-console (0.5.11)
     irb (1.4.1)
       reline (>= 0.3.0)
-    jbuilder (2.11.5)
-      actionview (>= 5.0.0)
-      activesupport (>= 5.0.0)
     kaminari (1.2.2)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.2)
@@ -257,7 +254,6 @@ DEPENDENCIES
   font-awesome-rails (~> 4.7)
   groupdate (~> 6.1)
   importmap-rails
-  jbuilder
   kaminari
   pg (~> 1.1)
   puma (~> 5.0)
