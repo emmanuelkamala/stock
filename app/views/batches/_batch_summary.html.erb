@@ -65,7 +65,7 @@
       <% @batch.incomes.each do |income| %>
         <tr class="table-row">
           <td class="table-data"><%= income.batch.batch_no %></td>
-          <td class="table-data"><%= income.date.try(strftime('%d %b %Y')) %></td>
+          <td class="table-data"><%= income.date.strftime('%d %b %Y') %></td>
           <td class="table-data"><%= income.category %></td>
           <td class="table-data right"><%= income.quantity %></td>
           <td class="table-data right"><%= income.unit_price %></td>

@@ -1,7 +1,7 @@
 <div id="<%= dom_id income %>" class="show">
   <p class="show__items">
     <span class="show__title"><strong>Date:</strong></span>
-    <span class="show__content"><%= income.date.strftime('%d %b %Y') %></span>
+    <span class="show__content"><%= income.date.try(:strftime, ('%d %b %Y')) %></span>
   </p>
 
   <p class="show__items">
