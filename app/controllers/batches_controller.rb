@@ -31,23 +31,19 @@ class BatchesController < ApplicationController
   def create
     @batch = Batch.new(batch_params)
 
-    respond_to do |format|
-      if @batch.save
-        redirect_to batch_url(@batch), notice: "Batch was successfully created."
-      else
-        render :new, status: :unprocessable_entity
-      end
+    if @batch.save
+      redirect_to batch_url(@batch), notice: "Batch was successfully created."
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /batches/1 or /batches/1.json
   def update
-    respond_to do |format|
-      if @batch.update(batch_params)
-        redirect_to batch_url(@batch), notice: "Batch was successfully updated."
-      else
-        render :edit, status: :unprocessable_entity
-      end
+    if @batch.update(batch_params)
+      redirect_to batch_url(@batch), notice: "Batch was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
