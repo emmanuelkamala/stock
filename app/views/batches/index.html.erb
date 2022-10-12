@@ -26,7 +26,7 @@
             <td class="table-data"><%= batch.flock_type %></td>
             <td class="table-data"><%= link_to 'Show', batch, class: 'btn-success' %></td>
             <td class="table-data"><%= link_to 'Edit', edit_batch_path(batch), class: 'btn-secondary' %></td>
-            <td class="table-data"><%= link_to 'Destroy', batch, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-danger' %></td>
+            <td class="table-data"><%= link_to 'Destroy', batch, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn-danger' %></td>
           </tr>
         <% end %>
       </tbody>
