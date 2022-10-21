@@ -15,6 +15,10 @@ class ReportSearch < ApplicationRecord
     Flock.where('date_in BETWEEN ? AND ?', @date_from, @date_to)
   end
 
+  def general_expense_scope
+    Expense.where('date_in BETWEEN ? AND ?', @date_from, @date_to)
+  end
+
   private 
 
   def parsed_date(date_string, default)
