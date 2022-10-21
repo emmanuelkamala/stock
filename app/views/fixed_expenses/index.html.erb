@@ -1,14 +1,51 @@
+<%= render 'layouts/sidebar' %>
+
+<div class="content__details">
+
 <p style="color: green"><%= notice %></p>
+  <div class="resource-title">
+    <h1>Fixed Expenses</h1>
+    <%= link_to "Add Expense", new_fixed_expense_path, class: "btn-success" %>
+  </div>
 
-<h1>Fixed expenses</h1>
+  <div class="table-responsive">
+    <table class="table-striped">
+      <thead>
+        <tr>
+          <th class="table-header">Date</th>
+          <th class="table-header">Type of expense</th>
+          <th class="table-header">Description</th>
+          <th class="table-header">Unit cost</th>
+          <th class="table-header">Quantity</th>
+          <th class="table-header">Total cost</th>
+          <th colspan="3" class="table-header"></th>
+        </tr>
+      </thead>
 
-<div id="fixed_expenses">
-  <% @fixed_expenses.each do |fixed_expense| %>
-    <%= render fixed_expense %>
-    <p>
-      <%= link_to "Show this fixed expense", fixed_expense %>
-    </p>
-  <% end %>
+      <tbody>
+        <% @fixed_expenses.each do |fixed_expense| %>
+          <tr class="table-row">
+            <td class="table-data"><%= fixed_expense.date.strftime('%d %b %Y') %></td>
+            <td class="table-data"><%= fixed_expense.type_of_expense %></td>
+            <td class="table-data"><%= fixed_expense.description %></td>
+            <td class="table-data right"><%= fixed_expense.cost %></td>
+            <td class="table-data right"><%= fixed_expense.quantity %></td>
+            <td class="table-data right"><%= number_to_currency(fixed_expense.total, :unit => "") %></td>
+            <td class="table-data"><%= link_to 'Show', fixed_expense, class: 'btn-success' %></td>
+            <td class="table-data"><%= link_to 'Edit', edit_fixed_expense_path(expense), class: 'btn-secondary' %></td>
+            <td class="table-data"><%= link_to 'Destroy', fixed_expense, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-danger' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <div class="paginate-bottom">
+      <strong>Total Fixed Expense per page</strong> = <%= number_to_currency(@fixed_expenses.map(&:total).sum, :unit => "Tshs. ", :delimiter => ",") %>
+    </div>
+
+    <div class="paginate-bottom">
+       <%= paginate @fixed_expenses %>
+    </div>
+  </div>
+
 </div>
-
-<%= link_to "New fixed expense", new_fixed_expense_path %>

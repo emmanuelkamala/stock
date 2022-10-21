@@ -3,20 +3,24 @@ class FixedExpensesController < ApplicationController
 
   # GET /fixed_expenses
   def index
-    @fixed_expenses = FixedExpense.all
+    @fixed_expenses = FixedExpense.order(params[:id]).page(params[:page])
+    @title = 'All Expenses'
   end
 
   # GET /fixed_expenses/1
   def show
+    @title = "Fixed Expense #{@fixed_expense.id}"
   end
 
   # GET /fixed_expenses/new
   def new
     @fixed_expense = FixedExpense.new
+    @title = 'New fixed Expense'
   end
 
   # GET /fixed_expenses/1/edit
   def edit
+    @title = "Edit Fixed Expense #{@fixed_expense.id}"
   end
 
   # POST /fixed_expenses

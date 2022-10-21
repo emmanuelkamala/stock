@@ -22,8 +22,18 @@
   </div>
 
   <div class="form__content">
+    <%= form.label :description, style: "display: block", class: "form__content-label" %>
+    <%= form.text_field :description, class: "form__content-field" %>
+  </div>
+
+  <div class="form__content">
     <%= form.label :cost, style: "display: block", class: "form__content-label" %>
     <%= form.number_field :cost, class: "form__content-field" %>
+  </div>
+
+  <div class="form__content">
+    <%= form.label :quantity, style: "display: block", class: "form__content-label" %>
+    <%= form.number_field :quantity, class: "form__content-field" %>
   </div>
 
   <div class="form__submit">
