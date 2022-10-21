@@ -1,17 +1,19 @@
-<div id="<%= dom_id fixed_expense %>">
-  <p>
-    <strong>Date in:</strong>
-    <%= fixed_expense.date_in %>
+
+
+<div id="<%= dom_id fixed_expense %>" class="show">
+
+  <p class="show__items">
+    <span class="show__title"><strong>Date:</strong></span>
+    <span class="show__content"><%= fixed_expense.date.strftime('%d %b %Y') %></span>
   </p>
 
-  <p>
-    <strong>Type of expense:</strong>
-    <%= fixed_expense.type_of_expense %>
+  <p class="show__items">
+    <span class="show__title"><strong>Type of Expense:</strong></span>
+    <span class="show__content"><%= fixed_expense.type_of_expense %></span>
   </p>
 
-  <p>
-    <strong>Cost:</strong>
-    <%= fixed_expense.cost %>
+  <p class="show__items">
+    <span class="show__title"><strong>Cost:</strong></span>
+    <span class="show__content"><%= fixed_expense.cost %></span>
   </p>
-
 </div>

@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :date_in, style: "display: block" %>
-    <%= form.datetime_field :date_in %>
+  <div class="form__content">
+    <%= form.label :date, style: "display: block", class: "form__content-label" %>
+    <%= form.date_field :date, class: "form__content-field" %>
   </div>
 
-  <div>
-    <%= form.label :type_of_expense, style: "display: block" %>
-    <%= form.text_field :type_of_expense %>
+  <div class="form__content">
+    <%= form.label :type_of_expense, style: "display: block", class: "form__content-label" %>
+    <%= form.text_field :type_of_expense, class: "form__content-field" %>
   </div>
 
-  <div>
-    <%= form.label :cost, style: "display: block" %>
-    <%= form.number_field :cost %>
+  <div class="form__content">
+    <%= form.label :cost, style: "display: block", class: "form__content-label" %>
+    <%= form.number_field :cost, class: "form__content-field" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="form__submit">
+    <%= form.submit class: "btn-success" %>
   </div>
 <% end %>

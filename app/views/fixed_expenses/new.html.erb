@@ -1,9 +1,13 @@
-<h1>New fixed expense</h1>
 
-<%= render "form", fixed_expense: @fixed_expense %>
+<%= render 'layouts/sidebar' %>
 
-<br>
-
-<div>
-  <%= link_to "Back to fixed expenses", fixed_expenses_path %>
+<div class="content__details">
+  <div class="resource-title">
+    <h1>Add Fixed Expense</h1>
+    <div>
+      <%= link_to "Back", fixed_expenses_path, class: "btn-back" %>
+    </div>
+  </div>
+  <%= render "form", fixed_expense: @fixed_expense %>
+  <br>
 </div>
