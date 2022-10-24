@@ -8,7 +8,7 @@
       <div class="btn">
         <%= link_to "Edit this batch", edit_batch_path(@batch), class: "btn-secondary" %> 
         <%= link_to "Back to batches", batches_path, class: "btn-back" %>
-        <%= button_to "Destroy this batch", @batch, data: {turbo}method: :delete, class: "btn-danger" %>
+        <%= button_to "Destroy this batch", @batch, method: :delete, class: "btn-danger" %>
       </div>
     </div>
     <div class="box">
