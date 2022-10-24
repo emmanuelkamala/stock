@@ -3,6 +3,9 @@ class FlocksController < ApplicationController
 
   def index
     @flocks = Flock.order(:batch_id).page(params[:page])
+    # @search = Flock.new(params[:search])
+    # @flocks = @search.flock_scope
+
     @title = 'All Flocks'
   end
 

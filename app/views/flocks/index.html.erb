@@ -7,6 +7,7 @@
         <h1>Flocks</h1>
         <%= link_to "New flock", new_flock_path, class: "btn-success", data: { turbo_action: "replace" } %>
       </div>
+      
     <% end %>
 
     <div class="table-responsive">
@@ -54,7 +55,7 @@
     </div>
 
     <div class="paginate-bottom">
-       <%= paginate @flocks %>
+      <%= paginate @flocks %>
     </div>
   </div>
 </div>

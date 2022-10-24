@@ -4,12 +4,6 @@ class IncomesController < ApplicationController
   def index
     @incomes = Income.order(:batch_id).page(params[:page])
     @title = 'Incomes'
-
-    respond_to do |format|
-      format.html
-      format.csv { send_data @incomes.to_csv, filename: "incomes-#{Date.today}.csv" }
-    end
-
   end
 
   def report
