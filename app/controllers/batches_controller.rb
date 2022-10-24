@@ -3,7 +3,7 @@ class BatchesController < ApplicationController
 
   # GET /batches or /batches.json
   def index
-    @batches = Batch.all
+    @batches = Batch.page(params[:page])
     @title = 'All Batches'
   end
 
