@@ -10,6 +10,7 @@ class PublicController < ApplicationController
     @expenses = Expense.all
     @flocks = Flock.all
     @batches = Batch.all
+    @fixed_expenses = FixedExpense.all
   end
 
   def show 

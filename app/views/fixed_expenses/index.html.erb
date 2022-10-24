@@ -25,14 +25,14 @@
       <tbody>
         <% @fixed_expenses.each do |fixed_expense| %>
           <tr class="table-row">
-            <td class="table-data"><%= fixed_expense.date.strftime('%d %b %Y') %></td>
+            <td class="table-data"><%= fixed_expense.date_in %></td>
             <td class="table-data"><%= fixed_expense.type_of_expense %></td>
             <td class="table-data"><%= fixed_expense.description %></td>
             <td class="table-data right"><%= fixed_expense.cost %></td>
             <td class="table-data right"><%= fixed_expense.quantity %></td>
             <td class="table-data right"><%= number_to_currency(fixed_expense.total, :unit => "") %></td>
             <td class="table-data"><%= link_to 'Show', fixed_expense, class: 'btn-success' %></td>
-            <td class="table-data"><%= link_to 'Edit', edit_fixed_expense_path(expense), class: 'btn-secondary' %></td>
+            <td class="table-data"><%= link_to 'Edit', edit_fixed_expense_path(fixed_expense), class: 'btn-secondary' %></td>
             <td class="table-data"><%= link_to 'Destroy', fixed_expense, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-danger' %></td>
           </tr>
         <% end %>

@@ -57,6 +57,6 @@ class FixedExpensesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def fixed_expense_params
-      params.require(:fixed_expense).permit(:date_in, :type_of_expense, :cost)
+      params.require(:fixed_expense).permit(:date_in, :type_of_expense, :cost, :quantity, :description)
     end
 end
