@@ -1,4 +1,5 @@
 class Flock < ApplicationRecord
+
   paginates_per 10
   
   validates :batch_id, presence: true
@@ -7,11 +8,12 @@ class Flock < ApplicationRecord
   validates :source, presence: true 
   validates :initial_stock, presence: true 
   validates :died_stock, presence: true 
+  validates :sold_stock, presence: true
   
   belongs_to :batch
 
   def current_stock
-    initial_stock - died_stock
+    initial_stock - (died_stock + sold_stock)
   end
 
   def age_in_weeks

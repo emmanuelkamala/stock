@@ -42,6 +42,11 @@
     <%= form.number_field :died_stock, class: "form__content-field" %>
   </div>
 
+   <div class="form__content">
+    <%= form.label :sold_stock, style: "display: block", class: "form__content-label" %>
+    <%= form.number_field :sold_stock, class: "form__content-field" %>
+  </div>
+
   <div class="form__content">
     <%= form.label :notes, style: "display: block", class: "form__content-label" %>
     <%= form.text_area :notes, class: "form__content-field" %>
