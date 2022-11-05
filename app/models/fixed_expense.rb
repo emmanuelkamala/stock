@@ -1,3 +1,5 @@
+require 'csv'
+
 class FixedExpense < ApplicationRecord
   paginates_per 10
 

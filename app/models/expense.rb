@@ -1,3 +1,5 @@
+require 'csv'
+
 class Expense < ApplicationRecord
   paginates_per 10
 

@@ -1,3 +1,5 @@
+require 'csv'
+
 class Flock < ApplicationRecord
   # attr_reader :date_from, :date_to
 
