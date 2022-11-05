@@ -4,7 +4,12 @@ class FixedExpensesController < ApplicationController
   # GET /fixed_expenses
   def index
     @fixed_expenses = FixedExpense.order(params[:id]).page(params[:page])
-    @title = 'All Expenses'
+    @title = 'All Fixed Expenses'
+    @fix = FixedExpense.ransack(params[:q])
+    respond_to do |format|
+      format.html
+      format.csv { send_data @fix.result.to_csv }
+    end
   end
 
   # GET /fixed_expenses/1
