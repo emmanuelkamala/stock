@@ -5,7 +5,11 @@
 <p style="color: green"><%= notice %></p>
   <div class="resource-title">
     <h1>Expenses</h1>
-    <%= link_to "Add Expense", new_expense_path, class: "btn-success" %>
+    <div>
+      <%= link_to "Add Expense", new_expense_path, class: "btn-success" %>
+      <%= link_to "Export Expense", expenses_path(format: :csv), class: "btn-success" %>
+    </div>
+
   </div>
 
   <div class="table-responsive">
