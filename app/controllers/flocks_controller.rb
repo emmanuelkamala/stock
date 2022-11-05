@@ -7,6 +7,12 @@ class FlocksController < ApplicationController
     # @flocks = @search.flock_scope
 
     @title = 'All Flocks'
+
+    @f = Flock.ransack(params[:q])
+    respond_to do |format|
+      format.html
+      format.csv { send_data @f.result.to_csv }
+    end
   end
 
   def report
