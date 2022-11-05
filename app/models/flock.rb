@@ -33,6 +33,18 @@ class Flock < ApplicationRecord
     Flock.where('date_in BETWEEN ? AND ?', @date_from, @date_to)
   end
 
+  def self.to_csv
+    attributes = Flock.column_names
+
+    CSV.generate(headers: true) do |csv|
+      csv << attributes
+
+      all.each do |flock|
+        csv << attributes.map{ |attr| flock.send(attr) }
+      end
+    end
+  end
+
 
   private 
 
