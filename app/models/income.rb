@@ -10,7 +10,7 @@ class Income < ApplicationRecord
   end
 
   def self.to_csv
-    attributes = %w{id date category quantity unit_price type }
+    attributes = Income.column_names
 
     CSV.generate(headers: true) do |csv|
       csv << attributes

@@ -4,8 +4,12 @@
   <p style="color: green"><%= notice %></p>
     <div class="resource-title">
       <h1>Incomes</h1>
-      <%= link_to "Add Income", new_income_path, class: "btn-success" %>
+      <div>
+        <%= link_to "Add Income", new_income_path, class: "btn-success" %>
+        <%= link_to "Export Income", incomes_path(format: :csv), class: "btn-success" %>
+      </div>
     </div>
+ 
 
     <div class="table-responsive">
     <table class="table-striped">
