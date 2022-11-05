@@ -19,6 +19,7 @@ gem "chartkick", "~> 4.1"
 gem "groupdate", "~> 6.1"
 gem "kaminari"
 gem 'bootstrap5-kaminari-views'
+gem "ransack"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
