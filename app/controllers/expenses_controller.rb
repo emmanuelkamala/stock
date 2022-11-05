@@ -4,6 +4,11 @@ class ExpensesController < ApplicationController
   def index
     @expenses = Expense.order(:batch_id).page(params[:page])
     @title = 'All Expenses'
+    @exp = Expense.ransack(params[:q])
+    respond_to do |format|
+      format.html
+      format.csv { send_data @exp.result.to_csv }
+    end
   end
 
   def show
