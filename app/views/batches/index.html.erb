@@ -5,7 +5,10 @@
   <p style="color: green"><%= notice %></p>
   <div class="resource-title">
     <h1>Batches</h1>
+    <div>
       <%= link_to "Add Batch", new_batch_path, class: "btn-success" %>
+      <%= link_to "Export Batch", batches_path(format: :csv), class: "btn-success" %>
+    </div>
   </div>
 
 
