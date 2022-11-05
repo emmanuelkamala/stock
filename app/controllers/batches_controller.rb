@@ -5,6 +5,11 @@ class BatchesController < ApplicationController
   def index
     @batches = Batch.page(params[:page])
     @title = 'All Batches'
+    @b = Income.ransack(params[:q])
+    respond_to do |format|
+      format.html
+      format.csv { send_data @b.result.to_csv }
+    end
   end
 
   # GET /batches/1 or /batches/1.json
