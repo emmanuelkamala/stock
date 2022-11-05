@@ -4,6 +4,11 @@ class IncomesController < ApplicationController
   def index
     @incomes = Income.order(:batch_id).page(params[:page])
     @title = 'Incomes'
+    @inc = Income.ransack(params[:q])
+    respond_to do |format|
+      format.html
+      format.csv { send_data @inc.result.to_csv }
+    end
   end
 
   def report
