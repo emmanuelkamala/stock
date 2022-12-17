@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_24_062717) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_21_145246) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -28,10 +28,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_062717) do
     t.integer "unit_price"
     t.integer "total_amount"
     t.text "description"
+    t.bigint "batch_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "batch_id"
-    t.bigint "flock_id"
     t.index ["batch_id"], name: "index_expenses_on_batch_id"
   end
 
@@ -52,48 +51,36 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_062717) do
   end
 
   create_table "flocks", force: :cascade do |t|
-    t.datetime "date_in", precision: nil
-    t.datetime "retirement_date"
+    t.integer "batch_no"
+    t.date "date_in"
+    t.date "retirement_date"
     t.string "source"
     t.integer "initial_stock"
-    t.integer "died_stock"
+    t.integer "died_stock", default: 0
+    t.integer "age"
     t.text "notes"
+    t.string "status"
+    t.integer "sold_stock", default: 0
+    t.bigint "batch_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "status"
-    t.bigint "batch_id"
-    t.integer "batch_no"
-    t.integer "sold_stock", default: 0
     t.index ["batch_id"], name: "index_flocks_on_batch_id"
   end
 
   create_table "incomes", force: :cascade do |t|
-    t.datetime "date"
+    t.date "date"
     t.string "category"
     t.integer "quantity"
     t.integer "unit_price"
     t.integer "total_amount"
     t.text "description"
+    t.bigint "batch_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "batch_id"
-    t.bigint "flock_id"
     t.index ["batch_id"], name: "index_incomes_on_batch_id"
   end
 
   create_table "report_searches", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "statuses", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "types", force: :cascade do |t|
-    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

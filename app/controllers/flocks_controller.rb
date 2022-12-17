@@ -1,4 +1,5 @@
 class FlocksController < ApplicationController
+  require 'csv'
   before_action :set_flock, only: %i[ show edit update destroy ]
 
   def index
@@ -13,6 +14,30 @@ class FlocksController < ApplicationController
       format.html
       format.csv { send_data @f.result.to_csv }
     end
+  end
+
+  def import 
+    file = params[:file]
+    return redirect_to flocks_path, notice: "Only CSV please" unless file.content_type == "text/csv"
+
+    file = File.open(file)
+    csv = CSV.parse(file, headers: true, col_sep: ";")
+    
+    csv.each do |row| 
+      flock_hash = {}
+      flock_hash[:batch_no] = row["batch_no"]
+      flock_hash[:date_in] = row["date_in"]
+      flock_hash[:retirement_date] = row["retirement_date"]
+      flock_hash[:source] = row["source"]
+      flock_hash[:initial_stock] = row["initial_stock"]
+      flock_hash[:died_stock] = row["died_stock"]
+      flock_hash[:sold_stock] = row["sold_stock"]
+      flock_hash[:notes] = row["notes"]
+      flock_hash[:status] = row["status"]
+
+      Flock.create(flock_hash)
+    end
+    redirect_to flocks_path, notice: "Flocks imported"
   end
 
   def report
