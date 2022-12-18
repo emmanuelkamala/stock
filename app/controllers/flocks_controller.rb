@@ -1,5 +1,4 @@
 class FlocksController < ApplicationController
-  require 'csv'
   before_action :set_flock, only: %i[ show edit update destroy ]
 
   def index

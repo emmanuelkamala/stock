@@ -16,9 +16,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_21_145246) do
 
   create_table "batches", force: :cascade do |t|
     t.integer "batch_no"
+    t.string "flock_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "flock_type"
   end
 
   create_table "expenses", force: :cascade do |t|
@@ -81,6 +81,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_21_145246) do
   end
 
   create_table "report_searches", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "statuses", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
