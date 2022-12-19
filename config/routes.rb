@@ -18,11 +18,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :incomes
-  resources :flocks do 
-    collection do 
-      post :import
-    end
-  end
+  resources :flocks 
   resources :expenses
   resources :statuses
   resources :batches

@@ -13,11 +13,6 @@
       
     <% end %>
 
-    <%= form_with url: import_flocks_path, method: :post do |form| %>
-      <%= form.file_field :file, accept: ".csv" %>
-      <%= form.button "Import" %>
-    <% end %>
-
     <div class="table-responsive">
       <table class="table-striped">
         <thead>
