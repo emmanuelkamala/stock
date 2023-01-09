@@ -6,10 +6,14 @@ default: &default
 development:
   <<: *default
   database: stock_development
+  username: postgres
+  password: Tanzania99!!
   
 test:
   <<: *default
   database: stock_test
+  username: postgres
+  password: Tanzania99!!
 
 production:
   <<: *default

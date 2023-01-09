@@ -4,9 +4,9 @@ class Batch < ApplicationRecord
   paginates_per 10
 
   validates :batch_no, presence: true
-  has_many :flocks
-  has_many :incomes
-  has_many :expenses
+  has_many :flocks, dependent: :destroy
+  has_many :incomes, dependent: :destroy
+  has_many :expenses, dependent: :destroy
 
   def self.to_csv
     attributes = Batch.column_names
