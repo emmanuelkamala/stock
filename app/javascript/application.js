@@ -4,4 +4,6 @@ import "Chart.bundle"
 import "@fortawesome/fontawesome-free/js/all"
 import "@hotwired/turbo-rails"
 import "controllers"
+import moment from "moment"
+window.moment = moment
 
