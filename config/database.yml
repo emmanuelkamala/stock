@@ -6,14 +6,16 @@ default: &default
 development:
   <<: *default
   database: stock_development
-  username: postgres
+  username: emmanuelkamala
   password: Tanzania99!!
+  port: 5433
   
 test:
   <<: *default
   database: stock_test
-  username: postgres
+  username: emmanuelkamala
   password: Tanzania99!!
+  port: 5433
 
 production:
   <<: *default
