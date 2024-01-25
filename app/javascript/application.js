@@ -6,4 +6,3 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import moment from "moment"
 window.moment = moment
-

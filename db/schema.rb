@@ -34,6 +34,11 @@ ActiveRecord::Schema[7.1].define(version: 2022_10_21_145246) do
     t.index ["batch_id"], name: "index_expenses_on_batch_id"
   end
 
+  create_table "financial_searches", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "fixed_expenses", force: :cascade do |t|
     t.date "date_in"
     t.string "type_of_expense"
@@ -76,6 +81,18 @@ ActiveRecord::Schema[7.1].define(version: 2022_10_21_145246) do
   end
 
   create_table "report_searches", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "statuses", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
